@@ -12,6 +12,7 @@ public class PlayerBehavior : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        playerAnimator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -22,9 +23,11 @@ public class PlayerBehavior : MonoBehaviour
 
     private void MovePlayer()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float verticalInput = Input.GetAxisRaw("Vertical");
         Vector3 movement = new Vector3(horizontalInput, verticalInput, 0.0f);
         rb.velocity = movement * speedMovement * Time.deltaTime;
+
+        playerAnimator.SetFloat("speed", horizontalInput);
     }
 }
