@@ -5,14 +5,16 @@ using UnityEngine;
 
 public enum FireBallType
 {
-    LINEAR
+    LINEAR,
+    FOLLOW_PlAYER
 }
 
 public class FireBallController : MonoBehaviour
 {
     public FireBallType fireBallType;
-    public float speed = 5.0f;
+    public float horizontalSpeed = 5.0f, verticalSpeed = 0.5f;
     Action behavior;
+    GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,10 @@ public class FireBallController : MonoBehaviour
             case FireBallType.LINEAR:
                 behavior = linearBehavior;
                 break;
+            case FireBallType.FOLLOW_PlAYER:
+                player = GameObject.FindGameObjectWithTag("Player");
+                behavior = followPlayerBehavior;
+                break; 
         }
     }
 
@@ -32,6 +38,12 @@ public class FireBallController : MonoBehaviour
     }
     void linearBehavior()
     {
-        transform.Translate(new Vector2(-speed * Time.deltaTime, 0));
+        transform.Translate(new Vector2(-horizontalSpeed * Time.deltaTime, 0));
+    }
+
+    void followPlayerBehavior()
+    {
+        float playerHorizontalDirection = transform.position.y - player.transform.position.y;
+        transform.Translate(new Vector2(-horizontalSpeed * Time.deltaTime, -playerHorizontalDirection * verticalSpeed * Time.deltaTime));
     }
 }
