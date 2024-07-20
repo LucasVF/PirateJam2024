@@ -13,6 +13,11 @@ public class PlayerBottonBehavior : MonoBehaviour
     public int jumpForce = 5;
     private bool jumpButtonPressed = false;
     private bool hasJumping = false;
+
+
+
+
+
     
 
     // Start is called before the first frame update

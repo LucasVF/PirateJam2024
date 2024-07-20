@@ -43,15 +43,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1819410549459616817}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 334cae380f12324439a5015eed6fba77, type: 3}
+  m_Script: {fileID: 11500000, guid: 5911d186a9fd1da41a16f6b153bae009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonAudio: {fileID: 6151995002050003840}
+  ButtonAudio: {fileID: 2546154417051628844}
   ThemeAudio: {fileID: 6151995002050003840}
-  GameplayAudio: {fileID: 8300000, guid: c2ed697763e2b2546a7aa9a72c77dee3, type: 3}
-  TitleAudio: {fileID: 0}
-  LossAudio: {fileID: 0}
-  VictoryAudio: {fileID: 0}
+  GameplayAudio: {fileID: 8300000, guid: 005b59ee774df5e4198e6fd3478eca42, type: 3}
+  TitleAudio: {fileID: 8300000, guid: 9ee91b48a070c974a933805dd1a8be6b, type: 3}
+  LossAudio: {fileID: 8300000, guid: 405f4fbb309be1545b5b88034629725f, type: 3}
+  VictoryAudio: {fileID: 8300000, guid: d19c032d99c8ed246b7be8000c8d8e08, type: 3}
 --- !u!1 &4371576281121557127
 GameObject:
   m_ObjectHideFlags: 0
