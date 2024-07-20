@@ -1,1 +1,7 @@
 *_out
+*.cache
+*.log
+*.mvfrm
+Temp/
+Library/Artifacts/
+obj/Debug/
