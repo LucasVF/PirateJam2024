@@ -6,6 +6,7 @@ public class PlayerBehavior : MonoBehaviour
 {
     public int speedMovement = 5;
     private Rigidbody rb;
+    public Animator playerAnimator;
 
     // Start is called before the first frame update
     void Start()

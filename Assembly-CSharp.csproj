@@ -62,6 +62,9 @@
   <ItemGroup>
     <Compile Include="Assets\Script\PlayerBehavior.cs" />
     <Compile Include="Assets\Script\PlayerBottonBehavior.cs" />
+    <Compile Include="Assets\Script\DamageReceiveBehavior.cs" />
+    <Compile Include="Assets\Script\LifeManager.cs" />
+    <Compile Include="Assets\Script\PitfallBehavior.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

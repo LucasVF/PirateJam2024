@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+  - FireBall
+  - Pitfall
   layers:
   - Default
   - TransparentFX
@@ -40,4 +43,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2905115567
+    locked: 0
+  - name: Pitfall
+    uniqueID: 156631625
+    locked: 0
+  - name: Player
+    uniqueID: 2891657377
     locked: 0
