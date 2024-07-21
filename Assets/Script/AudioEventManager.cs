@@ -14,6 +14,12 @@ public class AudioEventManager : MonoBehaviour
 
     [SerializeField]
     AudioClip GameplayAudio;
+    [SerializeField]
+    AudioClip TitleAudio;
+    [SerializeField]
+    AudioClip LossAudio;
+    [SerializeField]
+    AudioClip VictoryAudio;
 
     private void Awake()
     {
@@ -29,6 +35,9 @@ public class AudioEventManager : MonoBehaviour
 
     public void TriggerButtonAudio() => TriggerAudio(ButtonAudio);
     public void TriggerGameplayThemeAudio() => ChangeTheme(GameplayAudio);
+    public void TriggerTitleThemeAudio() => ChangeTheme(TitleAudio);
+    public void TriggerVictoryThemeAudio() => ChangeTheme(VictoryAudio);
+    public void TriggerLossThemeAudio() => ChangeTheme(LossAudio);
 
     private void TriggerAudio(AudioSource audioToPlay)
     {

@@ -6,9 +6,18 @@ public class PlayerBottonBehavior : MonoBehaviour
 {
     public Transform playerTopTransform;
     private Rigidbody rb;
+    public Animator playerAnimator;
+    public Animator playerBottomAnimator;
+    public SpriteRenderer playerSprite;
+    public SpriteRenderer playerBottomSprite;
     public int jumpForce = 5;
     private bool jumpButtonPressed = false;
     private bool hasJumping = false;
+
+
+
+
+
     
 
     // Start is called before the first frame update
@@ -43,11 +52,18 @@ public class PlayerBottonBehavior : MonoBehaviour
             if (!hasJumping)
             {
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+
+                playerAnimator.SetBool("jumpLeft", true);
+                playerBottomAnimator.SetBool("jumpLeft", true);
+                
             }
             
         }
 
         jumpButtonPressed = false;
+        
+
+
     }
 
     private void OnCollisionExit(Collision collision)
@@ -64,6 +80,9 @@ public class PlayerBottonBehavior : MonoBehaviour
         {
             hasJumping = false;
         }
+
+        playerAnimator.SetBool("jumpLeft", false);
+        playerBottomAnimator.SetBool("jumpLeft", false);
     }
 
 

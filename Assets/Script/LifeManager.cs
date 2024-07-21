@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LifeManager : MonoBehaviour
 {
-    public int playerLife = 3;
+    public int playerLife = 2;
     // Start is called before the first frame update
     void Start()
     {
