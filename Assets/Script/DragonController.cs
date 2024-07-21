@@ -38,7 +38,7 @@ public class DragonController : MonoBehaviour
         {
             fireBallRef = Instantiate(fireBall);
             fireBallRef.transform.position = fireBallSpawner.transform.position;
-            fireBallRef.GetComponent<FireBallController>().fireBallType = FireBallType.FOLLOW_PlAYER;
+            fireBallRef.GetComponent<FireBallController>().fireBallType = FireBallType.THREE_SHOTS_LINEAR;
             fireBallTimer = 0;
         }
     }
