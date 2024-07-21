@@ -24,8 +24,9 @@ public class DamageReceiveBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "FireBall")
         {
-            if (lifeManager.playerLife <= 0)
+            if (lifeManager.playerLife <= 1)
             {
+                lifeManager.TakeDamage(fireBallDamageValue);
                 lifeManager.DestroyPlayer();
                 Debug.Log("No life remaining...");
             }
