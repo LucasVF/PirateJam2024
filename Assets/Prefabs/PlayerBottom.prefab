@@ -121,6 +121,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTopTransform: {fileID: 0}
+  playerAnimator: {fileID: 0}
+  playerBottomAnimator: {fileID: 0}
+  playerSprite: {fileID: 0}
+  playerBottomSprite: {fileID: 0}
   jumpForce: 5
 --- !u!54 &8492104166267219407
 Rigidbody:
@@ -219,8 +223,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1403309919
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 933407820, guid: fce82121f95c9f6409ac8d7ea9de0cdc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

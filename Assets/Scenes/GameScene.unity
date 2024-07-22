@@ -3525,6 +3525,14 @@ PrefabInstance:
       propertyPath: playerBottomAnimator
       value: 
       objectReference: {fileID: 265826837}
+    - target: {fileID: 8255972535277863725, guid: 633def733acc25c459ba588e55ae231a, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8255972535277863725, guid: 633def733acc25c459ba588e55ae231a, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1403309919
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
