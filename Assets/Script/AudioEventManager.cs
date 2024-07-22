@@ -36,8 +36,14 @@ public class AudioEventManager : MonoBehaviour
     public void TriggerButtonAudio() => TriggerAudio(ButtonAudio);
     public void TriggerGameplayThemeAudio() => ChangeTheme(GameplayAudio);
     public void TriggerTitleThemeAudio() => ChangeTheme(TitleAudio);
-    public void TriggerVictoryThemeAudio() => ChangeTheme(VictoryAudio);
-    public void TriggerLossThemeAudio() => ChangeTheme(LossAudio);
+    public void TriggerResultThemeAudio(bool isWinner)
+    {
+        if (isWinner) {
+            ChangeTheme(VictoryAudio);
+        } else {
+            ChangeTheme(LossAudio);
+        }
+    }
 
     private void TriggerAudio(AudioSource audioToPlay)
     {
