@@ -43,6 +43,9 @@ public class LifeManager : MonoBehaviour
         Destroy(normalPlayer);
         GameObject shadowPlayer = GameObject.Find("PlayerBottom");
         Destroy(shadowPlayer);
+        GameObject gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        GameManager gameManagerComponent = gameManager.GetComponent<GameManager>();
+        gameManagerComponent.EndGame(false);
     }
 
     public void SetupEmptyHeart()

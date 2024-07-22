@@ -20,6 +20,9 @@ public class PitfallBehavior : MonoBehaviour
             GameObject shadowPlayer = GameObject.Find("PlayerBottom");
             Destroy(shadowPlayer);
             Debug.Log("Death by pitfall!");
+            GameObject gameManager = GameObject.FindGameObjectWithTag("GameManager");
+            GameManager gameManagerComponent = gameManager.GetComponent<GameManager>();
+            gameManagerComponent.EndGame(false);
         }
     }
 
