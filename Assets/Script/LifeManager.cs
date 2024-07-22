@@ -40,12 +40,18 @@ public class LifeManager : MonoBehaviour
     public void DestroyPlayer()
     {
         GameObject normalPlayer = GameObject.Find("PlayerTop");
-        Destroy(normalPlayer);
+       // Destroy(normalPlayer); // Commented for safety
+        //normalPlayer.SetActive(false);
         GameObject shadowPlayer = GameObject.Find("PlayerBottom");
-        Destroy(shadowPlayer);
+        //Destroy(shadowPlayer); // Disable Game Object!!
+        //shadowPlayer.SetActive(false);
         GameObject gameManager = GameObject.FindGameObjectWithTag("GameManager");
         GameManager gameManagerComponent = gameManager.GetComponent<GameManager>();
         gameManagerComponent.EndGame(false);
+
+        
+
+        TranslocatePlayerToOriginalPosition(normalPlayer);
     }
 
     public void SetupEmptyHeart()
@@ -62,5 +68,11 @@ public class LifeManager : MonoBehaviour
         {
             hearts[i].sprite = fullHeartSprite;
         }
+    }
+
+    private void TranslocatePlayerToOriginalPosition(GameObject playerTopGameObject)
+    {
+        playerTopGameObject.transform.position = new Vector3(-8f, 0.9f, playerTopGameObject.transform.position.z);
+        playerLife = 3;
     }
 }
