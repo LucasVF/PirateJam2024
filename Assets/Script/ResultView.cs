@@ -5,16 +5,21 @@ using UnityEngine;
 
 public class ResultView : View
 {
-    bool isWinner = false;
+    bool _isWinner = false;
 
     public override void DisplayView()
     {
-        AudioEventManager.Instance.TriggerResultThemeAudio(isWinner);
+        AudioEventManager.Instance.TriggerResultThemeAudio(_isWinner);
         ChangeViewDisplay(true);
     }
 
     public override void SetUpView()
     {
         Debug.Log("Setting Up Result View");
+    }
+
+    public void SetWinner(bool isWinner)
+    {
+        _isWinner = isWinner;
     }
 }
