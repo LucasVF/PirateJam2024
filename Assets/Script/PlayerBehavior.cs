@@ -42,10 +42,6 @@ public class PlayerBehavior : MonoBehaviour
         CheckPlayerUpOrientation();
 
         CheckPlayerDownOrientation();
-
-
-
-
     }
 
     private void CheckPlayerSpriteHorizontalOrientation()

@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     Dictionary<ViewType, View> _dictViewTheme;
 
-    void Awake()
+    void Start()
     {
         ClearViews();
 
