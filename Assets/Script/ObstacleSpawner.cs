@@ -19,7 +19,19 @@ public class ObstacleSpawner : MonoBehaviour
         {
             if (_inactiveObstacles.ContainsKey(type) && _inactiveObstacles[type].Count > 0)
             {
-
+                Debug.Log("Activate Obstacle");
+                GameObject inactiveObstacle = _inactiveObstacles[type][0];
+                _inactiveObstacles[type].RemoveAt(0);
+                inactiveObstacle.transform.position = point;
+                inactiveObstacle.SetActive(true);
+                if (_activeObstacles.ContainsKey(type))
+                {
+                    _activeObstacles[type].Add(inactiveObstacle);
+                }
+                else
+                {
+                    _activeObstacles.Add(type, new List<GameObject>() { inactiveObstacle });
+                }
             }
             else
             {
@@ -42,7 +54,8 @@ public class ObstacleSpawner : MonoBehaviour
     public void ResetObstacles()
     {
         List<GameObject> obstacles;
-        foreach (ObstacleType type in _activeObstacles.Keys)
+        List<ObstacleType> obstacleTypes = new List<ObstacleType>(this._activeObstacles.Keys);
+        foreach (ObstacleType type in obstacleTypes)
         {
             obstacles = _activeObstacles[type];
             foreach (GameObject obstacle in obstacles)

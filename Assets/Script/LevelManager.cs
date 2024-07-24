@@ -22,8 +22,8 @@ public class LevelManager : MonoBehaviour
     public void SetUpLevel(LevelScriptableObject levelConfig)
     {
         Debug.Log("Set Up Level " + levelConfig.levelID);
-        if (levelConfig.levelID != _currentLevelID)
-        {
+        //if (levelConfig.levelID != _currentLevelID)
+        //{
             _currentLevelID = levelConfig.levelID;            
             _nCollectiblesToWin = levelConfig.trueCollectibleSpawnPoint.Count;
 
@@ -32,7 +32,7 @@ public class LevelManager : MonoBehaviour
             {
                 _obstacleSpawner.SpawnObstacles(obstacleConfig);
             }
-        }
+        //}
         _player.transform.position = levelConfig.playerStartPoint;
         _dragon.transform.position = levelConfig.dragonStartPoint;
         _collectiblesCollected = 0;
