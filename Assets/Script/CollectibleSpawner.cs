@@ -42,17 +42,17 @@ public class CollectibleSpawner : MonoBehaviour
 
     public void ResetCollectibles()
     {
-        for(int i=0;i< _activeRealCollectiblesSpawned.Count;i++)
+        while (_activeRealCollectiblesSpawned.Count > 0)
         {
-            _activeRealCollectiblesSpawned[i].SetActive(false);
-            _inactiveRealCollectiblesSpawned.Add(_activeRealCollectiblesSpawned[i]);
-            _activeRealCollectiblesSpawned.Remove(_activeRealCollectiblesSpawned[i]);
+            _activeRealCollectiblesSpawned[0].SetActive(false);
+            _inactiveRealCollectiblesSpawned.Add(_activeRealCollectiblesSpawned[0]);
+            _activeRealCollectiblesSpawned.Remove(_activeRealCollectiblesSpawned[0]);
         }
-        for (int i = 0; i < _activeFakeCollectiblesSpawned.Count; i++)
+        while (_activeRealCollectiblesSpawned.Count > 0)
         {
-            _activeFakeCollectiblesSpawned[i].SetActive(false);
-            _inactiveFakeCollectiblesSpawned.Add(_activeFakeCollectiblesSpawned[i]);
-            _activeFakeCollectiblesSpawned.Remove(_activeFakeCollectiblesSpawned[i]);
+            _activeFakeCollectiblesSpawned[0].SetActive(false);
+            _inactiveFakeCollectiblesSpawned.Add(_activeFakeCollectiblesSpawned[0]);
+            _activeFakeCollectiblesSpawned.Remove(_activeFakeCollectiblesSpawned[0]);
         }
     }
 

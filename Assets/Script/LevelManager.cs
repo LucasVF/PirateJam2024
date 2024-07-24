@@ -12,19 +12,24 @@ public class LevelManager : MonoBehaviour
     Collider _player;
 
     int _collectiblesCollected;
-    Vector3 characterStartZone = new Vector3(-7.030001f, 1f, 0f);
-    Vector3 collectibleSpawnPoint = new Vector3(5.78999996f, 4.48000002f, 0.834488809f);
+    int _nCollectiblesToWin;
 
-    //TODO: Change after Level Spawner is done
-    public int _nCollectiblesToWin = 1;
-
-    public void SetUpLevel()
+    public void SetUpLevel(LevelScriptableObject levelConfig)
     {
         Debug.Log("Set Up Level");        
-        _player.transform.position = characterStartZone;
+        _player.transform.position = levelConfig.playerStartPoint;
+        _nCollectiblesToWin = levelConfig.trueCollectibleSpawnPoint.Count;
         _collectiblesCollected = 0;
         _collectibleSpawner.ResetCollectibles();
-        _collectibleSpawner.SpawnCollectibleAt(collectibleSpawnPoint, this, true);
+        foreach (Vector3 point in levelConfig.trueCollectibleSpawnPoint)
+        {
+            _collectibleSpawner.SpawnCollectibleAt(point, this, true);
+        }
+        foreach (Vector3 point in levelConfig.fakeCollectibleSpawnPoint)
+        {
+            _collectibleSpawner.SpawnCollectibleAt(point, this, true);
+        }
+
     }
 
     public void CollectibleCollected(CollectibleBehavior collectible)

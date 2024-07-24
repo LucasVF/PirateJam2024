@@ -2304,6 +2304,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameManager: {fileID: 224177334}
   _levelManager: {fileID: 1346725162}
+  _levelList:
+  - {fileID: 11400000, guid: 2935766b7bbda404189471ec545557dd, type: 2}
 --- !u!4 &1163996681 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6771935202781460015, guid: 2b18f33c096ee99448d384d10f9d0a40, type: 3}
@@ -4549,6 +4551,10 @@ PrefabInstance:
     - target: {fileID: 2507541535222751160, guid: 633def733acc25c459ba588e55ae231a, type: 3}
       propertyPath: m_Name
       value: PlayerBottom
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507541535222751160, guid: 633def733acc25c459ba588e55ae231a, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4910492633463234544, guid: 633def733acc25c459ba588e55ae231a, type: 3}
       propertyPath: playerSprite
