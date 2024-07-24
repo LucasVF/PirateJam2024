@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e612af01e8e91a49b88424d96c35519, type: 3}
+  m_Name: L0_Fireplace
+  m_EditorClassIdentifier: 
+  type: 3
+  prefab: {fileID: 3235756064872130284, guid: 0e900998702cd0b4a9b767d247d5b2f8, type: 3}
+  spawnPoints:
+  - {x: 2.04, y: -1.68, z: 0.73111284}
+  - {x: 10.08, y: 5.43, z: 0.73111284}

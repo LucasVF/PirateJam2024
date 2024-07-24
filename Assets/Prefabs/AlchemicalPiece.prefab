@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 583780035239874340}
   - component: {fileID: 4652345959129856220}
+  - component: {fileID: 2862588459898660486}
   m_Layer: 0
   m_Name: AlchemicalPiece
   m_TagString: Untagged
@@ -86,6 +87,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2862588459898660486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396400941135087176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9e9b0e0af15f9c478d51c581c0b6c3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.05
+  frequency: 10
 --- !u!1 &5574780960138571263
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f77fb35abe6af548a0cc01b1ca3a169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _symbol: {fileID: 0}
 --- !u!1 &8281109848355918302
 GameObject:
   m_ObjectHideFlags: 0

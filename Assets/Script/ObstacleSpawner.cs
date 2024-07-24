@@ -4,7 +4,12 @@ using UnityEngine;
 
 public enum ObstacleType
 {
-    Pitfall
+    Pitfall,
+    LargePitfall,
+    Sign,
+    Pilars,
+    Fireplace,
+    Bones
 }
 
 public class ObstacleSpawner : MonoBehaviour
