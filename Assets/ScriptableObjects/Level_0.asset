@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f30114c4096d23b49b0ab6781e4dfa3e, type: 3}
   m_Name: Level_0
   m_EditorClassIdentifier: 
+  levelID: 0
   trueCollectibleSpawnPoint:
   - {x: 5.79, y: 4.48, z: 0.83}
   - {x: -7.86, y: -3.19, z: 0.83}
@@ -19,4 +20,7 @@ MonoBehaviour:
   - {x: 1.3, y: -6.15, z: 0.83}
   - {x: -3.31, y: 6.48, z: 0.83}
   fakeCollectibleSpawnPoint: []
+  obstacles:
+  - {fileID: 11400000, guid: 9909e607677b96c4aa9ee69f015a5f22, type: 2}
   playerStartPoint: {x: -7.03, y: 1, z: 0}
+  dragonStartPoint: {x: 14.68, y: 2.44, z: 1.3605776}

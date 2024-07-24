@@ -9,16 +9,32 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     CollectibleSpawner _collectibleSpawner;
     [SerializeField]
+    ObstacleSpawner _obstacleSpawner;
+    [SerializeField]
     Collider _player;
+    [SerializeField]
+    GameObject _dragon;
 
     int _collectiblesCollected;
     int _nCollectiblesToWin;
+    int _currentLevelID =-1;
 
     public void SetUpLevel(LevelScriptableObject levelConfig)
     {
-        Debug.Log("Set Up Level");        
+        Debug.Log("Set Up Level " + levelConfig.levelID);
+        if (levelConfig.levelID != _currentLevelID)
+        {
+            _currentLevelID = levelConfig.levelID;            
+            _nCollectiblesToWin = levelConfig.trueCollectibleSpawnPoint.Count;
+
+            _obstacleSpawner.ResetObstacles();
+            foreach (ObstacleScriptableObject obstacleConfig in levelConfig.obstacles)
+            {
+                _obstacleSpawner.SpawnObstacles(obstacleConfig);
+            }
+        }
         _player.transform.position = levelConfig.playerStartPoint;
-        _nCollectiblesToWin = levelConfig.trueCollectibleSpawnPoint.Count;
+        _dragon.transform.position = levelConfig.dragonStartPoint;
         _collectiblesCollected = 0;
         _collectibleSpawner.ResetCollectibles();
         foreach (Vector3 point in levelConfig.trueCollectibleSpawnPoint)
@@ -28,8 +44,7 @@ public class LevelManager : MonoBehaviour
         foreach (Vector3 point in levelConfig.fakeCollectibleSpawnPoint)
         {
             _collectibleSpawner.SpawnCollectibleAt(point, this, true);
-        }
-
+        }        
     }
 
     public void CollectibleCollected(CollectibleBehavior collectible)
