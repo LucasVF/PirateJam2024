@@ -10,6 +10,8 @@ public class ResultView : View
     [SerializeField]
     Text _resultsText;
 
+    public LifeManager LifeManager;
+
     public override void DisplayView()
     {
         AudioEventManager.Instance.TriggerResultThemeAudio(_isWinner);
@@ -25,5 +27,8 @@ public class ResultView : View
     {
         _resultsText.text = isWinner ? "Yay! You are rich" : "Boohoo... You are poor =(";
         _isWinner = isWinner;
+
+        
+        LifeManager.playerLife = 3;
     }
 }

@@ -11,6 +11,10 @@ public class DamageReceiveBehavior : MonoBehaviour
     public int playerLayer = 1;
     public int fireballLayer = 2;
 
+    [Header("Players Animators")]
+    public Animator playerTopAnimator;
+    public Animator playerBottomAnimator;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +41,7 @@ public class DamageReceiveBehavior : MonoBehaviour
             else
             {
                 lifeManager.TakeDamage(fireBallDamageValue);
-                //StartCoroutine(ApplyInvencibility());
+                StartCoroutine(ApplyInvencibility());
                 lifeManager.ShowLife();
             }
         }
@@ -47,7 +51,25 @@ public class DamageReceiveBehavior : MonoBehaviour
     IEnumerator ApplyInvencibility()
     {
         Physics.IgnoreLayerCollision(playerLayer, fireballLayer);
+        ActivatePlayerInvincibleAnimation();
         yield return new WaitForSeconds(invencibilityTime);
         Physics.IgnoreLayerCollision(playerLayer, fireballLayer, false);
+        DeactivatePlayerInvincibleAnimation();
+
+
     }
+
+    public void ActivatePlayerInvincibleAnimation()
+    {
+        playerTopAnimator.SetLayerWeight(1, 1);
+        playerBottomAnimator.SetLayerWeight(1, 1);
+    }
+
+    public void DeactivatePlayerInvincibleAnimation()
+    {
+        playerTopAnimator.SetLayerWeight(1, 0);
+        playerBottomAnimator.SetLayerWeight(1, 0);
+    }
+
+    
 }
