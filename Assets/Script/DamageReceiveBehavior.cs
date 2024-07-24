@@ -6,6 +6,10 @@ public class DamageReceiveBehavior : MonoBehaviour
 {
     public LifeManager lifeManager;
     public int fireBallDamageValue = 1;
+    [Header ("Invincible Parameters")]
+    public float invencibilityTime = 3f;
+    public int playerLayer = 1;
+    public int fireballLayer = 2;
 
 
     // Start is called before the first frame update
@@ -33,9 +37,17 @@ public class DamageReceiveBehavior : MonoBehaviour
             else
             {
                 lifeManager.TakeDamage(fireBallDamageValue);
+                //StartCoroutine(ApplyInvencibility());
                 lifeManager.ShowLife();
             }
         }
 
+    }
+
+    IEnumerator ApplyInvencibility()
+    {
+        Physics.IgnoreLayerCollision(playerLayer, fireballLayer);
+        yield return new WaitForSeconds(invencibilityTime);
+        Physics.IgnoreLayerCollision(playerLayer, fireballLayer, false);
     }
 }
