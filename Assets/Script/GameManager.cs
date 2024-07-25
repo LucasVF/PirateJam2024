@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     View _startView;
     [SerializeField]
-    View _gameView;
+    GameView _gameView;
     [SerializeField]
     ResultView _resultView;
 
@@ -58,6 +58,15 @@ public class GameManager : MonoBehaviour
         _dictViewTheme[_currentView].HideView();
         _currentView = ViewType.Result;
         _resultView.SetWinner(isWinner);
+        _dictViewTheme[_currentView].DisplayView();
+    }
+
+    public void StartLevel(LevelScriptableObject levelConfig)
+    {
+        _dictViewTheme[_currentView].HideView();
+        _currentView = ViewType.Game;
+        _gameView.SetLevelConfig(levelConfig);
+        _dictViewTheme[_currentView].SetUpView();
         _dictViewTheme[_currentView].DisplayView();
     }
 }

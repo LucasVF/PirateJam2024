@@ -192,8 +192,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1.22, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.83474827, y: 1.1738834, z: 1}
+  m_Center: {x: -0.01729393, y: 0.023058325, z: 0}
 --- !u!54 &5236482963718302116
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -234,6 +234,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMovement: 350
+  playerAnimator: {fileID: 0}
+  playerBottomAnimator: {fileID: 0}
+  playerSprite: {fileID: 0}
+  playerBottomSprite: {fileID: 0}
 --- !u!114 &2256990103163414413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,6 +252,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeManager: {fileID: 0}
   fireBallDamageValue: 1
+  invencibilityTime: 3
+  playerLayer: 1
+  fireballLayer: 2
+  playerTopAnimator: {fileID: 0}
+  playerBottomAnimator: {fileID: 0}
 --- !u!95 &8476026814019130317
 Animator:
   serializedVersion: 5

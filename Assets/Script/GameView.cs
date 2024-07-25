@@ -8,8 +8,7 @@ public class GameView : View
     GameManager _gameManager;
     [SerializeField]
     LevelManager _levelManager;
-    [SerializeField]
-    List<LevelScriptableObject> _levelList;
+    LevelScriptableObject _levelConfig;
 
     public override void DisplayView()
     {
@@ -20,6 +19,11 @@ public class GameView : View
     public override void SetUpView()
     {
         Debug.Log("Setting Up Game View");
-        _levelManager.SetUpLevel(_levelList[0]);
+        _levelManager.SetUpLevel(_levelConfig);
+    }
+
+    public void SetLevelConfig(LevelScriptableObject levelConfig)
+    {
+        _levelConfig = levelConfig;
     }
 }

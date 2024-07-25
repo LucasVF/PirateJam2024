@@ -11,6 +11,9 @@ public class CollectibleSpawner : MonoBehaviour
     [SerializeField]
     GameObject _collectiblePrefab;
 
+    int _realIndexSprite = 0;
+    int _fakeIndexSprite = 0;
+
     List<GameObject> _activeRealCollectiblesSpawned = new List<GameObject>(); 
     List<GameObject> _activeFakeCollectiblesSpawned = new List<GameObject>();
     List<GameObject> _inactiveRealCollectiblesSpawned = new List<GameObject>();
@@ -19,24 +22,46 @@ public class CollectibleSpawner : MonoBehaviour
     public void SpawnCollectibleAt(Vector3 position, LevelManager levelManager, bool isReal = false)
     {
         List<GameObject> listToCheck = isReal ? _inactiveRealCollectiblesSpawned : _inactiveFakeCollectiblesSpawned;
+        GameObject collectibleToSpawn;
+        CollectibleBehavior collectibleBehavior;
         if (listToCheck.Count > 0)
         {
             Debug.Log("Activate Collectible");
-            GameObject inactiveCollectible = listToCheck[listToCheck.Count - 1];
-            listToCheck.Remove(inactiveCollectible);
-            inactiveCollectible.transform.position = position;
-            inactiveCollectible.SetActive(true);
-            _activeRealCollectiblesSpawned.Add(inactiveCollectible);
+            collectibleToSpawn = listToCheck[listToCheck.Count - 1];
+            listToCheck.Remove(collectibleToSpawn);
+            collectibleToSpawn.transform.position = position;
+            collectibleToSpawn.SetActive(true);
+            _activeRealCollectiblesSpawned.Add(collectibleToSpawn);
         }
         else
         {
             Debug.Log("New Collectible");
-            GameObject newCollectible = Instantiate(_collectiblePrefab, position, Quaternion.identity);
-            newCollectible.transform.parent = gameObject.transform;
-            CollectibleBehavior collectibleBehavior = newCollectible.GetComponentInChildren<CollectibleBehavior>();
+            collectibleToSpawn = Instantiate(_collectiblePrefab, position, Quaternion.identity);
+            collectibleToSpawn.transform.parent = gameObject.transform;
+            collectibleBehavior = collectibleToSpawn.GetComponentInChildren<CollectibleBehavior>();
             collectibleBehavior.SetLevelManager(levelManager);
-            newCollectible.SetActive(true);
-            _activeRealCollectiblesSpawned.Add(newCollectible);
+            collectibleToSpawn.SetActive(true);
+            _activeRealCollectiblesSpawned.Add(collectibleToSpawn);
+        }
+        collectibleBehavior = collectibleToSpawn.GetComponentInChildren<CollectibleBehavior>();
+        int spriteIndex = isReal ? _realIndexSprite : _fakeIndexSprite;
+        collectibleBehavior.SetUpSymbol(_realCollectibleSprite[spriteIndex]);
+
+        if (isReal)
+        {
+            _realIndexSprite++;
+            if (_realIndexSprite > _realCollectibleSprite.Count-1)
+            {
+                _realIndexSprite = 0;
+            }
+        }
+        else
+        {
+            _fakeIndexSprite++;
+            if (_fakeIndexSprite > _fakeCollectibleSprite.Count-1)
+            {
+                _fakeIndexSprite = 0;
+            }
         }
     }
 
@@ -54,20 +79,19 @@ public class CollectibleSpawner : MonoBehaviour
             _inactiveFakeCollectiblesSpawned.Add(_activeFakeCollectiblesSpawned[0]);
             _activeFakeCollectiblesSpawned.Remove(_activeFakeCollectiblesSpawned[0]);
         }
+        _realIndexSprite = 0;
     }
 
     public void Collect(CollectibleBehavior collectible)
     {
         GameObject collectibleGameObject = collectible.transform.parent.gameObject;
         collectibleGameObject.SetActive(false);
-        if (_activeRealCollectiblesSpawned.Remove(collectibleGameObject))
+        List<GameObject> activeList = collectible.IsFake ? _activeFakeCollectiblesSpawned : _activeRealCollectiblesSpawned;
+        List<GameObject> inactiveList = collectible.IsFake ? _inactiveFakeCollectiblesSpawned : _inactiveRealCollectiblesSpawned;
+
+        if (activeList.Remove(collectibleGameObject))
         {
-            _inactiveRealCollectiblesSpawned.Add(collectibleGameObject);
-        }
-        else
-        {
-            _activeFakeCollectiblesSpawned.Remove(collectibleGameObject);
-            _inactiveFakeCollectiblesSpawned.Add(collectibleGameObject);
-        }        
+            inactiveList.Add(collectibleGameObject);
+        }     
     }
 }

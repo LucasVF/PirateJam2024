@@ -6,8 +6,9 @@ using UnityEngine;
 public class CollectibleBehavior : MonoBehaviour
 {
     LevelManager _levelManager;
+    public bool IsFake = false;
     [SerializeField]
-    Sprite _symbol;
+    SpriteRenderer _symbol;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -26,6 +27,6 @@ public class CollectibleBehavior : MonoBehaviour
 
     public void SetUpSymbol(Sprite symbolSprite)
     {
-        _symbol = symbolSprite;
+        _symbol.sprite = symbolSprite;
     }
 }
