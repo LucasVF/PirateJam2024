@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class LevelManager : MonoBehaviour
     Collider _player;
     [SerializeField]
     GameObject _dragon;
+    [SerializeField]
+    Text _collectibleUI;
 
     int _collectiblesCollected;
     int _nCollectiblesToWin;
@@ -36,6 +39,7 @@ public class LevelManager : MonoBehaviour
         _player.transform.position = levelConfig.playerStartPoint;
         _dragon.transform.position = levelConfig.dragonStartPoint;
         _collectiblesCollected = 0;
+        UpdateUI();
         _collectibleSpawner.ResetCollectibles();
         foreach (Vector3 point in levelConfig.trueCollectibleSpawnPoint)
         {
@@ -52,11 +56,17 @@ public class LevelManager : MonoBehaviour
         _collectibleSpawner.Collect(collectible);
         _collectiblesCollected++;
         Debug.Log("Collected: " + _collectiblesCollected);
+        UpdateUI();
         if (_collectiblesCollected == _nCollectiblesToWin)
         {
             Debug.Log("EndGame");
             _collectibleSpawner.ResetCollectibles();
             _gameManager.EndGame(true);
         }
+    }
+
+    public void UpdateUI()
+    {
+        _collectibleUI.text = "x " + _collectiblesCollected + "/" +  _nCollectiblesToWin;
     }
 }
