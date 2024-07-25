@@ -14,12 +14,6 @@ public class PlayerBottonBehavior : MonoBehaviour
     private bool jumpButtonPressed = false;
     private bool hasJumping = false;
 
-
-
-
-
-    
-
     // Start is called before the first frame update
     void Start()
     {
@@ -61,9 +55,6 @@ public class PlayerBottonBehavior : MonoBehaviour
         }
 
         jumpButtonPressed = false;
-        
-
-
     }
 
     private void OnCollisionExit(Collision collision)
@@ -84,6 +75,4 @@ public class PlayerBottonBehavior : MonoBehaviour
         playerAnimator.SetBool("jumpLeft", false);
         playerBottomAnimator.SetBool("jumpLeft", false);
     }
-
-
 }

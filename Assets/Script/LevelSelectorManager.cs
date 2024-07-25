@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelSelectorManager : MonoBehaviour
 {
@@ -65,6 +66,7 @@ public class LevelSelectorManager : MonoBehaviour
             {
                 isTransitioning = false;
                 DisplayButtons();
+                EnableCenterButton();
             }
         }
     }
@@ -122,6 +124,36 @@ public class LevelSelectorManager : MonoBehaviour
         {
             float xPos = (i - currentIndex) * spacing;
             _levelList[i].transform.localPosition = new Vector3(xPos, 0, 0);
+        }
+        EnableCenterButton();
+    }
+
+    void EnableCenterButton()
+    {
+        for (int i = 0; i < _levelList.Count; i++)
+        {
+            Button buttonComponent = _levelList[i].GetComponent<Button>();
+            Text textComponent = _levelList[i].GetComponentInChildren<Text>();
+            if (i == currentIndex)
+            {
+                buttonComponent.interactable = true;
+                if (textComponent != null)
+                {
+                    Color textColor = textComponent.color;
+                    textColor.a = 1f; // Fully opaque
+                    textComponent.color = textColor;
+                }
+            }
+            else
+            {
+                buttonComponent.interactable = false;
+                if (textComponent != null)
+                {
+                    Color textColor = textComponent.color;
+                    textColor.a = 0.5f; // Semi-transparent
+                    textComponent.color = textColor;
+                }
+            }
         }
     }
 }
