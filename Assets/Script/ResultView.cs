@@ -11,6 +11,8 @@ public class ResultView : View
     Text _resultsText;
 
     public LifeManager LifeManager;
+    public GameObject playerTopGameObject;
+    private Vector3 playerOriginalScale = new Vector3(1f, 1f, 1f);
 
     public override void DisplayView()
     {
@@ -30,5 +32,6 @@ public class ResultView : View
 
         
         LifeManager.playerLife = 3;
+        playerTopGameObject.transform.localScale = playerOriginalScale;
     }
 }
