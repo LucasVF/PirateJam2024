@@ -14,6 +14,7 @@ public class GameView : View
     {
         AudioEventManager.Instance.TriggerGameplayThemeAudio();
         ChangeViewDisplay(true);
+        _levelManager.LevelStarted();
     }
 
     public override void SetUpView()

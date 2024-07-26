@@ -53,11 +53,12 @@ public class GameManager : MonoBehaviour
         _dictViewTheme[_currentView].DisplayView();
     }
 
-    public void EndGame(bool isWinner)
+    public void EndGame(bool isWinner, float time = 0f)
     {
         _dictViewTheme[_currentView].HideView();
         _currentView = ViewType.Result;
         _resultView.SetWinner(isWinner);
+        _resultView.SetTimeElapsed(isWinner, time);
         _dictViewTheme[_currentView].DisplayView();
     }
 

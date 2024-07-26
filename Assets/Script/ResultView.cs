@@ -9,6 +9,8 @@ public class ResultView : View
     bool _isWinner = false;
     [SerializeField]
     Text _resultsText;
+    [SerializeField]
+    Text _timeText;
 
     [SerializeField]
     GameObject _playNextLevelButton;
@@ -38,5 +40,29 @@ public class ResultView : View
 
         LifeManager.playerLife = 3;
         playerTopGameObject.transform.localScale = playerOriginalScale;
+    }
+
+    public void SetTimeElapsed(bool isWinner, float time)
+    {
+        _timeText.text = isWinner ? "Time Elapsed: " + FormatTime(time) : "";
+    }
+    string FormatTime(float timeInSeconds)
+    {
+        int hours = Mathf.FloorToInt(timeInSeconds / 3600);
+        int minutes = Mathf.FloorToInt((timeInSeconds % 3600) / 60);
+        int seconds = Mathf.FloorToInt(timeInSeconds % 60);
+
+        if (hours > 0)
+        {
+            return string.Format("{0:D2}:{1:D2}:{2:D2}s", hours, minutes, seconds);
+        }
+        else if (minutes > 0)
+        {
+            return string.Format("{0:D2}:{1:D2}s", minutes, seconds);
+        }
+        else
+        {
+            return string.Format("{0:D2}s", seconds);
+        }
     }
 }

@@ -22,6 +22,9 @@ public class LevelManager : MonoBehaviour
     int _nCollectiblesToWin;
     int _currentLevelID =-1;
 
+    private float elapsedTime = 0f;  // To track the elapsed time
+    private float nextUpdateTime = 0f;
+
     public void SetUpLevel(LevelScriptableObject levelConfig)
     {
         Debug.Log("Set Up Level " + levelConfig.levelID);
@@ -48,7 +51,23 @@ public class LevelManager : MonoBehaviour
         foreach (Vector3 point in levelConfig.fakeCollectibleSpawnPoint)
         {
             _collectibleSpawner.SpawnCollectibleAt(point, this, true);
-        }        
+        }  
+    }
+
+    public void LevelStarted()
+    {
+        elapsedTime = 0f;
+        nextUpdateTime = 0f;
+    }
+
+    private void Update()
+    {
+        elapsedTime += Time.deltaTime;
+        
+        if (Time.time >= nextUpdateTime)
+        {
+            nextUpdateTime = Time.time + 1f;
+        }
     }
 
     public void CollectibleCollected(CollectibleBehavior collectible)
@@ -61,7 +80,7 @@ public class LevelManager : MonoBehaviour
         {
             Debug.Log("EndGame");
             _collectibleSpawner.ResetCollectibles();
-            _gameManager.EndGame(true);
+            _gameManager.EndGame(true, elapsedTime);
         }
     }
 
