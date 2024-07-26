@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e612af01e8e91a49b88424d96c35519, type: 3}
+  m_Name: L0_Fire
+  m_EditorClassIdentifier: 
+  type: 6
+  prefab: {fileID: 3788068935744871985, guid: bd3785296c06a9949a05f290f14ee2da, type: 3}
+  spawnPoints:
+  - {x: 2.09, y: -1.07, z: 0.73111284}

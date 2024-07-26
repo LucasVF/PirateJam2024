@@ -27,5 +27,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 148fb1822dde4b44db5a9e26f3cb818b, type: 2}
   - {fileID: 11400000, guid: be87309b5229a0142945bdc9c462aac1, type: 2}
   - {fileID: 11400000, guid: 9a0721508d943244abe58f90fe007383, type: 2}
+  - {fileID: 11400000, guid: 55d18a6e90fb087448805764e7e91277, type: 2}
   playerStartPoint: {x: -7.03, y: 1, z: 0}
   dragonStartPoint: {x: 14.68, y: 2.44, z: 1.3605776}

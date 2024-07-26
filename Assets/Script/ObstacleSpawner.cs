@@ -9,7 +9,8 @@ public enum ObstacleType
     Sign,
     Pilars,
     Fireplace,
-    Bones
+    Bones,
+    Fire
 }
 
 public class ObstacleSpawner : MonoBehaviour
