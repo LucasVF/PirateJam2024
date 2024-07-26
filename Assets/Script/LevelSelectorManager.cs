@@ -31,6 +31,20 @@ public class LevelSelectorManager : MonoBehaviour
         _gameManager.StartLevel(levelConfig);
     }
 
+    public void StartNextLevel()
+    {
+        if (currentIndex + 1 < _levelConfigs.Count)
+        {
+            currentIndex++;
+            _gameManager.StartLevel(_levelConfigs[currentIndex]);
+        }        
+    }
+
+    public bool IsLastLevel()
+    {
+        return currentIndex > _levelList.Count - 2;
+    }
+
     public float spacing = 400f; // Spacing between buttons
     public float transitionDuration = 0.5f; // Duration of the smooth transition
     private int currentIndex = 0;
