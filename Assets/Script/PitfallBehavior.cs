@@ -42,7 +42,7 @@ public class PitfallBehavior : MonoBehaviour
 
     IEnumerator PlayerFall(Collider other)
     {
-        
+        AudioEventManager.Instance.TriggerCharacterFallingAudio();
         playerTopAnimator.SetTrigger("isFalling");
         playerBottomAnimator.SetTrigger("isFall");
         yield return new WaitForSeconds(1.5f);
