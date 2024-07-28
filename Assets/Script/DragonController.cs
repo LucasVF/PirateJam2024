@@ -18,7 +18,7 @@ public class DragonController : MonoBehaviour
     void Start()
     {
         fireBallTimer = 0;
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.Find("PlayerTop");
     }
 
     // Update is called once per frame
@@ -47,7 +47,7 @@ public class DragonController : MonoBehaviour
     {
         if (shouldFollowPlayer)
         {
-            transform.position = new Vector2(transform.position.x, player.transform.position.y);
+            transform.position = new Vector3(transform.position.x, player.transform.position.y, transform.position.z);
         }
     }
 }
