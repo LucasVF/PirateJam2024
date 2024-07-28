@@ -16,10 +16,14 @@ public class LifeManager : MonoBehaviour
     public SpriteRenderer playerBottomSpriteRenderer;
     public SpriteRenderer playerTopSpriteRenderer;
 
+    Transform shadowPlayerTransform;
+
     // Start is called before the first frame update
     void Start()
     {
         ShowLife();
+
+        shadowPlayerTransform = GameObject.Find("PlayerBottomSprite").transform;
     }
 
     // Update is called once per frame
@@ -44,6 +48,9 @@ public class LifeManager : MonoBehaviour
 
     public void DestroyPlayer()
     {
+        Rigidbody playerRb = GameObject.Find("PlayerTop").GetComponent<Rigidbody>();
+        playerRb.isKinematic = false;
+
         GameObject normalPlayer = GameObject.Find("PlayerTop");
        // Destroy(normalPlayer); // Commented for safety
         //normalPlayer.SetActive(false);
@@ -78,6 +85,11 @@ public class LifeManager : MonoBehaviour
     private void TranslocatePlayerToOriginalState(GameObject playerTopGameObject)
     {
         playerTopGameObject.transform.position = new Vector3(-8f, 0.9f, playerTopGameObject.transform.position.z);
+
+        
+        shadowPlayerTransform.localScale = Vector3.one;
+
+        playerTopGameObject.transform.rotation = new Quaternion(0, 0, 0, 0);
 
 
         

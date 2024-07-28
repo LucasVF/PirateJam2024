@@ -20,6 +20,7 @@ public class DamageReceiveBehavior : MonoBehaviour
     void Start()
     {
         lifeManager = GameObject.Find("LifeManager").GetComponent<LifeManager>();
+        
     }
 
     // Update is called once per frame

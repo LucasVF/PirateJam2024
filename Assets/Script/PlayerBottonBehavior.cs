@@ -62,6 +62,7 @@ public class PlayerBottonBehavior : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             hasJumping = true;
+            StartCoroutine(JumpCoroutine());
         }
     }
 
@@ -72,7 +73,13 @@ public class PlayerBottonBehavior : MonoBehaviour
             hasJumping = false;
         }
 
-        playerAnimator.SetBool("jumpLeft", false);
+        
         playerBottomAnimator.SetBool("jumpLeft", false);
+    }
+
+    IEnumerator JumpCoroutine()
+    {
+        yield return new WaitForSeconds(0.35f);
+        playerAnimator.SetBool("jumpLeft", false);
     }
 }
