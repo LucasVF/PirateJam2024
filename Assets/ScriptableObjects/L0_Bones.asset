@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e612af01e8e91a49b88424d96c35519, type: 3}
   m_Name: L0_Bones
   m_EditorClassIdentifier: 
-  type: 4
+  type: 5
   prefab: {fileID: 6784669402098946108, guid: e531597efce9b544085538671a59f99f, type: 3}
   spawnPoints:
   - {x: 12.04, y: -3.2, z: 0.73111284}

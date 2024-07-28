@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e612af01e8e91a49b88424d96c35519, type: 3}
+  m_Name: L2_Pitfalls
+  m_EditorClassIdentifier: 
+  type: 0
+  prefab: {fileID: 1286462031822591738, guid: 928673ce2a3fac6409c721ea9df6f373, type: 3}
+  spawnPoints:
+  - {x: -6.6, y: 6.6, z: 1.05555}
+  - {x: -2.3, y: 6.6, z: 1.05555}
+  - {x: 1.56, y: 6.6, z: 1.05555}
+  - {x: 5.76, y: 6.6, z: 1.05555}
+  - {x: -6.6, y: -2.6, z: 1.05555}
+  - {x: -2.3, y: -2.6, z: 1.05555}
+  - {x: 1.56, y: -2.6, z: 1.05555}
+  - {x: 5.76, y: -2.6, z: 1.05555}

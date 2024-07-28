@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e612af01e8e91a49b88424d96c35519, type: 3}
   m_Name: L0_Pilars
   m_EditorClassIdentifier: 
-  type: 2
+  type: 3
   prefab: {fileID: 2479325086586661044, guid: 0010ad2a287edd04dbe4ea876fff006f, type: 3}
   spawnPoints:
   - {x: -6.26, y: 8.9, z: 0.73111284}

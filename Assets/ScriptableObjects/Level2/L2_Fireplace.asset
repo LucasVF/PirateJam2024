@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e612af01e8e91a49b88424d96c35519, type: 3}
-  m_Name: L0_LargePitfalls
+  m_Name: L2_Fireplace
   m_EditorClassIdentifier: 
-  type: 1
-  prefab: {fileID: 2248179723494343200, guid: 9f0d1ff4efbbb2d42a23d200caae345c, type: 3}
+  type: 4
+  prefab: {fileID: 3235756064872130284, guid: 0e900998702cd0b4a9b767d247d5b2f8, type: 3}
   spawnPoints:
-  - {x: 3.5, y: 1.8, z: 0.73111284}
+  - {x: 3, y: -2, z: 0.7311128}
+  - {x: -8.24, y: 1.78, z: 0.7311128}
+  - {x: -3, y: 5, z: 0.73111284}
