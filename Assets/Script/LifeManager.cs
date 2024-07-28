@@ -11,6 +11,11 @@ public class LifeManager : MonoBehaviour
     public Sprite emptyHeartSprite;
     public Sprite fullHeartSprite;
 
+    public PlayerBehavior playerBehaviorScript;
+
+    public SpriteRenderer playerBottomSpriteRenderer;
+    public SpriteRenderer playerTopSpriteRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +56,7 @@ public class LifeManager : MonoBehaviour
 
         
 
-        TranslocatePlayerToOriginalPosition(normalPlayer);
+        TranslocatePlayerToOriginalState(normalPlayer);
     }
 
     public void SetupEmptyHeart()
@@ -70,9 +75,20 @@ public class LifeManager : MonoBehaviour
         }
     }
 
-    private void TranslocatePlayerToOriginalPosition(GameObject playerTopGameObject)
+    private void TranslocatePlayerToOriginalState(GameObject playerTopGameObject)
     {
         playerTopGameObject.transform.position = new Vector3(-8f, 0.9f, playerTopGameObject.transform.position.z);
-        playerLife = 3;
+
+
+        
+        Color playerTopColor = playerTopSpriteRenderer.color;
+        playerTopColor.a = 1;
+        playerTopSpriteRenderer.color = playerTopColor;
+
+        Color playerBottomColor = playerBottomSpriteRenderer.color;
+        playerBottomColor.a = 1;
+        playerBottomSpriteRenderer.color = playerBottomColor;
+        
+        playerBehaviorScript.enabled = true;
     }
 }

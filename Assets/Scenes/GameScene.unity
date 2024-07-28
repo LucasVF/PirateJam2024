@@ -2609,6 +2609,17 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 1864533561280439551, guid: 2b18f33c096ee99448d384d10f9d0a40, type: 3}
   m_PrefabInstance: {fileID: 6972051033381723662}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1163996687 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8364205217920626677, guid: 2b18f33c096ee99448d384d10f9d0a40, type: 3}
+  m_PrefabInstance: {fileID: 6972051033381723662}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c215563d1d515c94e9008cba5ccf4c24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1217421869
 GameObject:
   m_ObjectHideFlags: 0
@@ -5565,6 +5576,9 @@ MonoBehaviour:
   - {fileID: 1018165365}
   emptyHeartSprite: {fileID: -86364930, guid: 462f0ff3a9ed8ec4ba4b56709474ba28, type: 3}
   fullHeartSprite: {fileID: -1490718116, guid: 462f0ff3a9ed8ec4ba4b56709474ba28, type: 3}
+  playerBehaviorScript: {fileID: 1163996687}
+  playerBottomSpriteRenderer: {fileID: 265826839}
+  playerTopSpriteRenderer: {fileID: 1883533879}
 --- !u!1 &2146574779
 GameObject:
   m_ObjectHideFlags: 0

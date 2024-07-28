@@ -35,7 +35,15 @@ public class DamageReceiveBehavior : MonoBehaviour
             if (lifeManager.playerLife <= 1)
             {
                 lifeManager.TakeDamage(fireBallDamageValue);
-                lifeManager.DestroyPlayer();
+                
+                PlayerBehavior playerBehaviorScript = GetComponent<PlayerBehavior>();//
+                playerBehaviorScript.enabled = false;//
+                StartCoroutine(DeathAnimation());
+                //playerBehaviorScript.enabled = true;
+
+                //
+                //lifeManager.DestroyPlayer();
+                //playerTopAnimator.SetBool("isDead", false);//
                 Debug.Log("No life remaining...");
             }
             else
@@ -69,6 +77,18 @@ public class DamageReceiveBehavior : MonoBehaviour
     {
         playerTopAnimator.SetLayerWeight(1, 0);
         playerBottomAnimator.SetLayerWeight(1, 0);
+    }
+
+    IEnumerator DeathAnimation()
+    {
+        playerTopAnimator.SetTrigger("isDead");
+        playerBottomAnimator.SetTrigger("isDead");
+        
+        Debug.Log("isDead active");
+        yield return new WaitForSeconds(1.5f);
+        
+        lifeManager.DestroyPlayer();
+        //
     }
 
     
