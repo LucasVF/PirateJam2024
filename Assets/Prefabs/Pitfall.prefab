@@ -153,3 +153,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeManager: {fileID: 0}
   playerTopAnimator: {fileID: 0}
+  playerBottomAnimator: {fileID: 0}
+  playerBehaviorScript: {fileID: 0}

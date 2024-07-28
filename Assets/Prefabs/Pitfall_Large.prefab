@@ -137,8 +137,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.4594808, y: 2.5631187, z: 1}
-  m_Center: {x: -0.02196138, y: -0.043551743, z: 0}
+  m_Size: {x: 3.65, y: 3, z: 1}
+  m_Center: {x: 0.05, y: 0, z: 0}
 --- !u!114 &9180335299118115661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,3 +152,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeManager: {fileID: 0}
+  playerTopAnimator: {fileID: 0}
+  playerBottomAnimator: {fileID: 0}
+  playerBehaviorScript: {fileID: 0}

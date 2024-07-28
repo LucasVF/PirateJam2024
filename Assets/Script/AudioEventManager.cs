@@ -13,6 +13,8 @@ public class AudioEventManager : MonoBehaviour
     AudioSource ThemeAudio;
     [SerializeField]
     AudioSource CollectibleAudio;
+    [SerializeField]
+    AudioSource CharacterFallingAudio;
 
     [SerializeField]
     AudioClip GameplayAudio;
@@ -39,6 +41,7 @@ public class AudioEventManager : MonoBehaviour
     public void TriggerGameplayThemeAudio() => ChangeTheme(GameplayAudio);
     public void TriggerCollectibleAudio() => TriggerAudio(CollectibleAudio);
     public void TriggerTitleThemeAudio() => ChangeTheme(TitleAudio);
+    public void TriggerCharacterFallingAudio() => TriggerAudio(CharacterFallingAudio);
     public void TriggerResultThemeAudio(bool isWinner)
     {
         if (isWinner) {
