@@ -20,6 +20,16 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     Text _collectibleUI;
 
+    [SerializeField]
+    PlayerBehavior playerBehaviorScript;
+    [SerializeField]
+    Animator playerTopAnimator;
+    [SerializeField]
+    Animator playerBottomAnimator;
+
+    public int playerLayer = 1;
+    public int fireballLayer = 2;
+
     int _collectiblesCollected;
     int _nCollectiblesToWin;
     int _currentLevelID =-1;
@@ -83,14 +93,33 @@ public class LevelManager : MonoBehaviour
         UpdateUI();
         if (_collectiblesCollected == _nCollectiblesToWin)
         {
-            Debug.Log("EndGame");
-            _collectibleSpawner.ResetCollectibles();
-            _gameManager.EndGame(true, elapsedTime);
+            
+            
+            
+            StartCoroutine(WinGameCoroutine());
         }
     }
 
     public void UpdateUI()
     {
         _collectibleUI.text = "x " + _collectiblesCollected + "/" +  _nCollectiblesToWin;
+    }
+
+    IEnumerator WinGameCoroutine()
+    {
+        Rigidbody playerRb = GameObject.Find("PlayerTop").GetComponent<Rigidbody>();
+        playerRb.isKinematic = true;
+        Physics.IgnoreLayerCollision(playerLayer, fireballLayer);
+
+        playerTopAnimator.SetTrigger("victory");
+        playerBottomAnimator.SetTrigger("victory");
+
+        yield return new WaitForSeconds(2.5f);
+
+        Debug.Log("EndGame");
+        playerRb.isKinematic = false;
+        Physics.IgnoreLayerCollision(playerLayer, fireballLayer, false);
+        _collectibleSpawner.ResetCollectibles();
+        _gameManager.EndGame(true, elapsedTime);
     }
 }
