@@ -21,13 +21,13 @@ MonoBehaviour:
   - {x: 8.970003, y: -7.5, z: 0.83}
   fakeCollectibleSpawnPoint: []
   obstacles:
+  - {fileID: 11400000, guid: 41ae7b5f53482324d86a4056fe60414a, type: 2}
   - {fileID: 11400000, guid: fe0b69c9823f2594d98ada1610bf1c77, type: 2}
   - {fileID: 11400000, guid: 49358be4573f51449bca2bb52c95079b, type: 2}
   - {fileID: 11400000, guid: a713027175a802248b5efe38c62e2a93, type: 2}
   - {fileID: 11400000, guid: f35deeaa037c7544fae818a3aafff3a6, type: 2}
   - {fileID: 11400000, guid: 597e712634b484b41a8758152191890f, type: 2}
   - {fileID: 11400000, guid: 2c5625cbd2efc384f9d062e12ab7ed1e, type: 2}
-  - {fileID: 11400000, guid: 41ae7b5f53482324d86a4056fe60414a, type: 2}
   playerStartPoint: {x: -9, y: 1, z: 0}
   dragonStartPoint: {x: 14.68, y: 2.44, z: 1.3605776}
   dragonAnimationSpeedFactor: 0.5

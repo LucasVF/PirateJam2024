@@ -21,12 +21,14 @@ MonoBehaviour:
   - {x: -3.31, y: 6.48, z: 0.83}
   fakeCollectibleSpawnPoint: []
   obstacles:
-  - {fileID: 11400000, guid: 9909e607677b96c4aa9ee69f015a5f22, type: 2}
-  - {fileID: 11400000, guid: c39db2723789faa4bbd4e92789a8e649, type: 2}
-  - {fileID: 11400000, guid: d198727b86a9af9459a9cbdcad79b84f, type: 2}
-  - {fileID: 11400000, guid: 148fb1822dde4b44db5a9e26f3cb818b, type: 2}
-  - {fileID: 11400000, guid: be87309b5229a0142945bdc9c462aac1, type: 2}
-  - {fileID: 11400000, guid: 9a0721508d943244abe58f90fe007383, type: 2}
+  - {fileID: 11400000, guid: 8ab5e934abc5c1e4dbf8d35f1c925ac0, type: 2}
+  - {fileID: 11400000, guid: 2cca5353dcaa0e345a6e194be53dcf38, type: 2}
+  - {fileID: 11400000, guid: cb905676273f43b4db202c0d915b0b9f, type: 2}
+  - {fileID: 11400000, guid: 6cd2ea20c184f9a49abb91910518fb4a, type: 2}
+  - {fileID: 11400000, guid: e18cc798773a9fd49982b0db374895e7, type: 2}
+  - {fileID: 11400000, guid: 566f36a94f5d12c48bd44cfd6bfb13f6, type: 2}
+  - {fileID: 11400000, guid: 67a2f80adde5d1344a7aa418830d3b93, type: 2}
+  - {fileID: 11400000, guid: 0b1119e28733a5041a80ea4b3573da31, type: 2}
   playerStartPoint: {x: -7.03, y: 1, z: 0}
   dragonStartPoint: {x: 14.68, y: 2.44, z: 1.3605776}
   dragonAnimationSpeedFactor: 0.7

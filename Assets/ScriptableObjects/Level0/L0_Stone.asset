@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e612af01e8e91a49b88424d96c35519, type: 3}
-  m_Name: L2_Sign
+  m_Name: L0_Stone
   m_EditorClassIdentifier: 
-  type: 2
-  prefab: {fileID: 2205881799820223608, guid: 8ea66b053536e5c4a9207b0057f5f06c, type: 3}
+  type: 7
+  prefab: {fileID: 5410481537975779044, guid: 43b5d2416c8663a4882ff37e2959c7fe, type: 3}
   spawnPoints:
-  - {x: 9.9, y: 6.6, z: 0.7311128}
-  - {x: -12, y: 3, z: 0.7311128}
-  - {x: -2.25, y: -3.7, z: 0.73111284}
+  - {x: 5.53, y: 7.461028, z: 0.73111284}
+  - {x: -12.3, y: 3.3, z: 0.73111284}

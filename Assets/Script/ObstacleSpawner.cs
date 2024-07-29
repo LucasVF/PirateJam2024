@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +9,8 @@ public enum ObstacleType
     Pilars,
     Fireplace,
     Bones,
-    Fire
+    Fire,
+    Stone
 }
 
 public class ObstacleSpawner : MonoBehaviour
