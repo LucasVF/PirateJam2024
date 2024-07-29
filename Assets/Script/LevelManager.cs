@@ -113,8 +113,10 @@ public class LevelManager : MonoBehaviour
 
         playerTopAnimator.SetTrigger("victory");
         playerBottomAnimator.SetTrigger("victory");
+        AudioEventManager.Instance.StopTheme();
+        AudioEventManager.Instance.TriggerCharacterCommemorationAudio();
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2.5f);
 
         Debug.Log("EndGame");
         playerRb.isKinematic = false;

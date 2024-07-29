@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioEventManager : MonoBehaviour
@@ -15,6 +12,8 @@ public class AudioEventManager : MonoBehaviour
     AudioSource CollectibleAudio;
     [SerializeField]
     AudioSource CharacterFallingAudio;
+    [SerializeField]
+    AudioSource VictoryCommemorationAudio;
 
     [SerializeField]
     AudioClip GameplayAudio;
@@ -24,6 +23,7 @@ public class AudioEventManager : MonoBehaviour
     AudioClip LossAudio;
     [SerializeField]
     AudioClip VictoryAudio;
+    
 
     private void Awake()
     {
@@ -40,7 +40,7 @@ public class AudioEventManager : MonoBehaviour
     public void TriggerButtonAudio() => TriggerAudio(ButtonAudio);
     public void TriggerCollectibleAudio() => TriggerAudio(CollectibleAudio);    
     public void TriggerCharacterFallingAudio() => TriggerAudio(CharacterFallingAudio);
-
+    public void TriggerCharacterCommemorationAudio() => TriggerAudio(VictoryCommemorationAudio);
     public void TriggerGameplayThemeAudio()
     {
         ThemeAudio.volume = 0.15f;
@@ -75,5 +75,15 @@ public class AudioEventManager : MonoBehaviour
         ThemeAudio.Stop();
         ThemeAudio.clip = newTheme;
         ThemeAudio.Play();
+    }
+
+    public void StopTheme()
+    {
+        ThemeAudio.Stop();
+    }
+
+    public void ResumeTheme()
+    {
+        ThemeAudio.UnPause();
     }
 }
