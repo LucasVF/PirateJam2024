@@ -19,7 +19,9 @@ public class BlinkingEffect : MonoBehaviour
         bool start = false;
         while (gameObject.activeSelf)
         {
-            _text.enabled = !start;
+            Color color = Color.black;
+            color.a = !start ? 1 : 0;
+            _text.color = color;
             yield return new WaitForSeconds(speed);
             start = !start;
         }
