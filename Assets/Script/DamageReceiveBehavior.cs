@@ -93,6 +93,8 @@ public class DamageReceiveBehavior : MonoBehaviour
 
     IEnumerator DeathAnimation()
     {
+        Rigidbody playerRb = GameObject.Find("PlayerTop").GetComponent<Rigidbody>();
+        playerRb.isKinematic = true;
         playerTopAnimator.SetTrigger("isDead");
         playerBottomAnimator.SetTrigger("isDead");
         Debug.Log("isDead active");
@@ -100,8 +102,9 @@ public class DamageReceiveBehavior : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         AudioEventManager.Instance.TriggerCharacterDyingAudio();
         yield return new WaitForSeconds(1.5f);
-        
+        playerRb.isKinematic = false;
         lifeManager.DestroyPlayer();
+
         //
     }
 
