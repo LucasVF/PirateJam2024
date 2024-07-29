@@ -20,7 +20,7 @@ public class FireBallController : MonoBehaviour
         threeLinearTargetTimer = 0.2f, threeLinearMaxMovTimer = 1.0f, scatterSpeed = 1.5f;
     Action behavior;
     GameObject player;
-    public GameObject upperCopy, downCopy;
+    public GameObject upperCopy, downCopy, middleCopy;
     public Transform upperCopyPosition, downCopyPosition; 
 
     // Start is called before the first frame update
@@ -86,5 +86,12 @@ public class FireBallController : MonoBehaviour
         }
         threeLinearTimer += Time.deltaTime;
         transform.Translate(new Vector2(-horizontalSpeed * Time.deltaTime, 0));
+    }
+
+    public void setAsShadow()
+    {
+        //upperCopy.GetComponent<Animator>().SetBool("isShadow", true);
+        middleCopy.GetComponent<Animator>().SetBool("isShadow", true);
+        //downCopy.GetComponent<Animator>().SetBool("isShadow", true);
     }
 }

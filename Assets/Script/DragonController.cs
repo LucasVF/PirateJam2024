@@ -13,12 +13,20 @@ public class DragonController : MonoBehaviour
     public Transform fireBallSpawner;
     public float fireBallCooldown = 2.0f ;
     public float fireBallTimer;
+    public float animationSpeedFactor = 1f;
+    public bool isShadow = false;
+    public FireBallType fireBallType = FireBallType.THREE_SHOTS_LINEAR;
+
+    Animator anim;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Awake()
+    {   
+        anim = GetComponent<Animator>();
         fireBallTimer = 0;
         player = GameObject.Find("PlayerTop");
+
+        anim.speed = animationSpeedFactor;
     }
 
     // Update is called once per frame
@@ -27,20 +35,22 @@ public class DragonController : MonoBehaviour
         if (player != null)
         {
             followPlayer();
-            spawFireBall();
         }
     }
 
     private void spawFireBall()
     {
-        fireBallTimer += Time.deltaTime;
-        if (fireBallTimer > fireBallCooldown)
+        fireBallRef = Instantiate(fireBall);
+        fireBallRef.transform.position = fireBallSpawner.transform.position;
+        fireBallRef.GetComponent<FireBallController>().fireBallType = fireBallType;
+        fireBallTimer = 0;
+        if (isShadow)
         {
-            fireBallRef = Instantiate(fireBall);
-            fireBallRef.transform.position = fireBallSpawner.transform.position;
-            fireBallRef.GetComponent<FireBallController>().fireBallType = FireBallType.THREE_SHOTS_LINEAR;
-            fireBallTimer = 0;
+            fireBallRef.GetComponent<FireBallController>().setAsShadow();
         }
+        
+        
+        
     }
 
     private void followPlayer()
