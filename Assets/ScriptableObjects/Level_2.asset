@@ -28,6 +28,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f35deeaa037c7544fae818a3aafff3a6, type: 2}
   - {fileID: 11400000, guid: 597e712634b484b41a8758152191890f, type: 2}
   - {fileID: 11400000, guid: 2c5625cbd2efc384f9d062e12ab7ed1e, type: 2}
+  - {fileID: 11400000, guid: 0ea31a203f70b8c4096049338bd12ec8, type: 2}
   playerStartPoint: {x: -9, y: 1, z: 0}
   dragonStartPoint: {x: 14.68, y: 2.44, z: 1.3605776}
   dragonAnimationSpeedFactor: 0.5

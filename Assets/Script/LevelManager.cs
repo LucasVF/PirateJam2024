@@ -27,8 +27,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     Animator playerBottomAnimator;
 
-    public int playerLayer = 1;
-    public int fireballLayer = 2;
+    public int playerLayer = 6;
+    public int fireballLayer = 7;
 
     int _collectiblesCollected;
     int _nCollectiblesToWin;
@@ -114,7 +114,7 @@ public class LevelManager : MonoBehaviour
         playerTopAnimator.SetTrigger("victory");
         playerBottomAnimator.SetTrigger("victory");
 
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(3f);
 
         Debug.Log("EndGame");
         playerRb.isKinematic = false;

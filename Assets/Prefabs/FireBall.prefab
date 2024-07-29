@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6023897667102494258}
   - component: {fileID: 4676525963842492461}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FireBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,7 +552,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1981330231843111790}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: UpperCopyTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -583,7 +583,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1755256261679854465}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DownCopyTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e612af01e8e91a49b88424d96c35519, type: 3}
   m_Name: L1_Pitfalls
   m_EditorClassIdentifier: 
+  type: 0
   prefab: {fileID: 1286462031822591738, guid: 928673ce2a3fac6409c721ea9df6f373, type: 3}
   spawnPoints:
-  - {x: 4.8, y: -0.32045013, z: 1.0555499}
-  - {x: -2.13, y: -2.81, z: 1.0555499}
-  - {x: -0.35, y: 4.58, z: 1.0555499}
+  - {x: -4, y: 3, z: 1.0555499}
+  - {x: 0, y: 3, z: 1.0555499}
+  - {x: 4, y: 3, z: 1.0555499}
+  - {x: -2, y: 6, z: 1.0555499}
+  - {x: 2, y: 6, z: 1.0555499}
+  - {x: -2, y: 0, z: 1.0555499}
+  - {x: 2, y: 0, z: 1.0555499}
