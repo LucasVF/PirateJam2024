@@ -86,7 +86,8 @@ public class LifeManager : MonoBehaviour
     {
         playerTopGameObject.transform.position = new Vector3(-8f, 0.9f, playerTopGameObject.transform.position.z);
 
-        
+        shadowPlayerTransform.transform.position = new Vector3(-8f, -7.382896f, playerTopGameObject.transform.position.z);
+
         shadowPlayerTransform.localScale = Vector3.one;
 
         playerTopGameObject.transform.rotation = new Quaternion(0, 0, 0, 0);

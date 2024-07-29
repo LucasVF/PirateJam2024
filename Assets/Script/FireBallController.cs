@@ -16,6 +16,7 @@ public enum FireBallType
 public class FireBallController : MonoBehaviour
 {
     public FireBallType fireBallType;
+    public bool isShadow = false;
     public float horizontalSpeed = 5.0f, verticalFollowSpeed = 0.5f, threeLinearTimer, 
         threeLinearTargetTimer = 0.2f, threeLinearMaxMovTimer = 1.0f, scatterSpeed = 1.5f;
     Action behavior;
@@ -90,6 +91,7 @@ public class FireBallController : MonoBehaviour
 
     public void setAsShadow()
     {
+        isShadow = true;
         //upperCopy.GetComponent<Animator>().SetBool("isShadow", true);
         middleCopy.GetComponent<Animator>().SetBool("isShadow", true);
         //downCopy.GetComponent<Animator>().SetBool("isShadow", true);

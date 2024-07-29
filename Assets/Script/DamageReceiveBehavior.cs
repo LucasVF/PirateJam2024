@@ -6,6 +6,8 @@ public class DamageReceiveBehavior : MonoBehaviour
 {
     public LifeManager lifeManager;
     public int fireBallDamageValue = 1;
+    public bool isShadow = false;
+    public PlayerBehavior playerBehaviorScript;
     [Header ("Invincible Parameters")]
     public float invencibilityTime = 3f;
     public int playerLayer = 1;
@@ -33,26 +35,28 @@ public class DamageReceiveBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "FireBall")
         {
-            if (lifeManager.playerLife <= 1)
+            FireBallController fireBallController = collision.gameObject.transform.parent.GetComponent<FireBallController>();
+            if (this.isShadow == fireBallController.isShadow)
             {
-                lifeManager.TakeDamage(fireBallDamageValue);
-                
-                PlayerBehavior playerBehaviorScript = GetComponent<PlayerBehavior>();//
-                playerBehaviorScript.enabled = false;//
-                StartCoroutine(DeathAnimation());
-                //playerBehaviorScript.enabled = true;
+                if (lifeManager.playerLife <= 1)
+                {
+                    lifeManager.TakeDamage(fireBallDamageValue);
+                    playerBehaviorScript.enabled = false;//
+                    StartCoroutine(DeathAnimation());
+                    //playerBehaviorScript.enabled = true;
 
-                //
-                //lifeManager.DestroyPlayer();
-                //playerTopAnimator.SetBool("isDead", false);//
-                Debug.Log("No life remaining...");
-            }
-            else
-            {
-                lifeManager.TakeDamage(fireBallDamageValue);
-                StartCoroutine(ApplyInvencibility());
-                lifeManager.ShowLife();
-            }
+                    //
+                    //lifeManager.DestroyPlayer();
+                    //playerTopAnimator.SetBool("isDead", false);//
+                    Debug.Log("No life remaining...");
+                }
+                else
+                {
+                    lifeManager.TakeDamage(fireBallDamageValue);
+                    StartCoroutine(ApplyInvencibility());
+                    lifeManager.ShowLife();
+                }
+            }            
         }
 
     }

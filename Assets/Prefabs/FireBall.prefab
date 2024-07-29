@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireBallType: 0
+  isShadow: 0
   horizontalSpeed: 5
   verticalFollowSpeed: 0.5
   threeLinearTimer: 0
@@ -71,10 +72,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3684041985337373480}
   - component: {fileID: 1074539897190479619}
-  - component: {fileID: 6111672771221446208}
   - component: {fileID: 7132929014821953430}
   - component: {fileID: 8374414406315393936}
   - component: {fileID: 8803218501845489386}
+  - component: {fileID: 6111672771221446208}
   m_Layer: 7
   m_Name: FireBallSprite
   m_TagString: FireBall
@@ -149,18 +150,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6111672771221446208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3396307415833573872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 438b11818e7ca004eb33d0c32f88fa6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &7132929014821953430
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -230,6 +219,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.2447488, y: 2.4240468, z: 0.2}
   m_Center: {x: 0.04251799, y: -0.38797677, z: 0}
+--- !u!114 &6111672771221446208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3396307415833573872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438b11818e7ca004eb33d0c32f88fa6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4765259679679436714
 GameObject:
   m_ObjectHideFlags: 0
