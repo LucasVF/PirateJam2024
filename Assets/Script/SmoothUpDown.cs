@@ -9,7 +9,7 @@ public class SmoothUpDown : MonoBehaviour
 
     private Vector3 startPosition;
 
-    void Start()
+    void OnEnable()
     {
         startPosition = transform.position;
     }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -12,11 +13,11 @@ public class DragonController : MonoBehaviour
     public bool shouldFollowPlayer;
     public Transform fireBallSpawner;
     public Transform fireBallParent;
-    public float fireBallCooldown = 2.0f ;
     public float fireBallTimer;
-    public float animationSpeedFactor = 1f;
     public bool isShadow = false;
     public FireBallType fireBallType = FireBallType.THREE_SHOTS_LINEAR;
+    [NonSerialized]
+    public float animationSpeedFactor = 1f;
 
     Animator anim;
 
@@ -62,4 +63,5 @@ public class DragonController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, player.transform.position.y, transform.position.z);
         }
     }
+
 }

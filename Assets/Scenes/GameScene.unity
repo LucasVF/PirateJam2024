@@ -2051,9 +2051,9 @@ MonoBehaviour:
   _gameManager: {fileID: 224177334}
   _levelSelectorUnitPrefab: {fileID: 7699940557570457969, guid: f345e5c22530dfc4e878a2f1c0bb531e, type: 3}
   _levelConfigs:
-  - {fileID: 11400000, guid: 2935766b7bbda404189471ec545557dd, type: 2}
-  - {fileID: 11400000, guid: 9c743da682507824597afae303269eee, type: 2}
-  - {fileID: 11400000, guid: 332b6d212056a2942bbeae6b4048b5cb, type: 2}
+  - {fileID: 11400000, guid: 479a606f7ca2a22498b2ef0778de2351, type: 2}
+  - {fileID: 11400000, guid: 847102b89adf5b34a9fe76cb1262152c, type: 2}
+  - {fileID: 11400000, guid: b946ed0c1620cb54fb2379044a99c67d, type: 2}
   spacing: 400
   transitionDuration: 0.5
   _moveRight: {fileID: 1670831400}

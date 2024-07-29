@@ -55,7 +55,7 @@ public class LevelManager : MonoBehaviour
         _dragonController.transform.parent.position = levelConfig.dragonStartPoint;
         _dragonController.fireBallType = levelConfig.dragonFireBallType;
         _dragonController.animationSpeedFactor = levelConfig.dragonAnimationSpeedFactor;
-        _shadowDragonController.animationSpeedFactor = levelConfig.shadowDragonAnimationSpeedFactor;
+        _shadowDragonController.animationSpeedFactor = levelConfig.dragonAnimationSpeedFactor;
        _collectiblesCollected = 0;
         UpdateUI();
         _collectibleSpawner.ResetCollectibles();
@@ -65,7 +65,7 @@ public class LevelManager : MonoBehaviour
         }
         foreach (Vector3 point in levelConfig.fakeCollectibleSpawnPoint)
         {
-            _collectibleSpawner.SpawnCollectibleAt(point, this, true);
+            _collectibleSpawner.SpawnCollectibleAt(point, this);
         }  
     }
 

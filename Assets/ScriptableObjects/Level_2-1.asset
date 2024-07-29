@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f30114c4096d23b49b0ab6781e4dfa3e, type: 3}
+  m_Name: Level_2-1
+  m_EditorClassIdentifier: 
+  levelID: 1
+  trueCollectibleSpawnPoint:
+  - {x: -15.5, y: -1, z: 0.83}
+  - {x: 0, y: 9, z: 0.83}
+  - {x: 7, y: -3, z: 0.83}
+  - {x: -11.5, y: -6, z: 0.83}
+  - {x: 4, y: -7.5, z: 0.83}
+  fakeCollectibleSpawnPoint: []
+  obstacles:
+  - {fileID: 11400000, guid: 8ab5e934abc5c1e4dbf8d35f1c925ac0, type: 2}
+  - {fileID: 11400000, guid: 2cca5353dcaa0e345a6e194be53dcf38, type: 2}
+  - {fileID: 11400000, guid: cb905676273f43b4db202c0d915b0b9f, type: 2}
+  - {fileID: 11400000, guid: 6cd2ea20c184f9a49abb91910518fb4a, type: 2}
+  - {fileID: 11400000, guid: e18cc798773a9fd49982b0db374895e7, type: 2}
+  - {fileID: 11400000, guid: 566f36a94f5d12c48bd44cfd6bfb13f6, type: 2}
+  - {fileID: 11400000, guid: 67a2f80adde5d1344a7aa418830d3b93, type: 2}
+  - {fileID: 11400000, guid: 0b1119e28733a5041a80ea4b3573da31, type: 2}
+  playerStartPoint: {x: -7.03, y: 1, z: 0}
+  dragonStartPoint: {x: 14.68, y: 2.44, z: 1.3605776}
+  dragonAnimationSpeedFactor: 5
+  dragonFireBallType: 3

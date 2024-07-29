@@ -29,8 +29,8 @@ public class CollectibleSpawner : MonoBehaviour
             Debug.Log("Activate Collectible");
             collectibleToSpawn = listToCheck[listToCheck.Count - 1];
             listToCheck.Remove(collectibleToSpawn);
-            collectibleToSpawn.transform.position = position;
             collectibleToSpawn.SetActive(true);
+            collectibleToSpawn.transform.position = position;
             _activeRealCollectiblesSpawned.Add(collectibleToSpawn);
         }
         else
@@ -67,17 +67,25 @@ public class CollectibleSpawner : MonoBehaviour
 
     public void ResetCollectibles()
     {
-        while (_activeRealCollectiblesSpawned.Count > 0)
+        if (_activeRealCollectiblesSpawned.Count > 0)
         {
-            _activeRealCollectiblesSpawned[0].SetActive(false);
-            _inactiveRealCollectiblesSpawned.Add(_activeRealCollectiblesSpawned[0]);
-            _activeRealCollectiblesSpawned.Remove(_activeRealCollectiblesSpawned[0]);
+            _activeRealCollectiblesSpawned.ForEach(collectible =>
+            {
+                collectible.SetActive(false);
+                _inactiveRealCollectiblesSpawned.Add(collectible);
+            });
+
+            _activeRealCollectiblesSpawned.Clear();
         }
-        while (_activeRealCollectiblesSpawned.Count > 0)
+        if (_activeFakeCollectiblesSpawned.Count > 0)
         {
-            _activeFakeCollectiblesSpawned[0].SetActive(false);
-            _inactiveFakeCollectiblesSpawned.Add(_activeFakeCollectiblesSpawned[0]);
-            _activeFakeCollectiblesSpawned.Remove(_activeFakeCollectiblesSpawned[0]);
+            _activeFakeCollectiblesSpawned.ForEach(collectible =>
+            {
+                collectible.SetActive(false);
+                _inactiveFakeCollectiblesSpawned.Add(collectible);
+            });
+
+            _activeFakeCollectiblesSpawned.Clear();
         }
         _realIndexSprite = 0;
     }
