@@ -2363,6 +2363,7 @@ MonoBehaviour:
   fireBallDamageValue: 1
   isShadow: 1
   playerBehaviorScript: {fileID: 1163996687}
+  _sprite: {fileID: 265826839}
   invencibilityTime: 3
   playerLayer: 6
   fireballLayer: 7
@@ -6613,6 +6614,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1974893404}
     m_Modifications:
+    - target: {fileID: 2256990103163414413, guid: 2b18f33c096ee99448d384d10f9d0a40, type: 3}
+      propertyPath: _sprite
+      value: 
+      objectReference: {fileID: 1883533879}
     - target: {fileID: 2256990103163414413, guid: 2b18f33c096ee99448d384d10f9d0a40, type: 3}
       propertyPath: lifeManager
       value: 

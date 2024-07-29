@@ -8,6 +8,7 @@ public class DamageReceiveBehavior : MonoBehaviour
     public int fireBallDamageValue = 1;
     public bool isShadow = false;
     public PlayerBehavior playerBehaviorScript;
+    public SpriteRenderer _sprite;
     [Header ("Invincible Parameters")]
     public float invencibilityTime = 3f;
     public int playerLayer = 1;
@@ -23,6 +24,14 @@ public class DamageReceiveBehavior : MonoBehaviour
     {
         lifeManager = GameObject.Find("LifeManager").GetComponent<LifeManager>();
         
+    }
+
+    private void OnDisable()
+    {
+        RemoveInvincibility();
+        Color color = Color.white;
+        color.a = 1;
+        _sprite.color = color;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -60,16 +69,19 @@ public class DamageReceiveBehavior : MonoBehaviour
         Physics.IgnoreLayerCollision(playerLayer, fireballLayer);
         ActivatePlayerInvincibleAnimation();
         yield return new WaitForSeconds(invencibilityTime);
-        Physics.IgnoreLayerCollision(playerLayer, fireballLayer, false);
-        DeactivatePlayerInvincibleAnimation();
-
-
+        RemoveInvincibility();
     }
 
     public void ActivatePlayerInvincibleAnimation()
     {
         playerTopAnimator.SetLayerWeight(1, 1);
         playerBottomAnimator.SetLayerWeight(1, 1);
+    }
+
+    public void RemoveInvincibility()
+    {
+        Physics.IgnoreLayerCollision(playerLayer, fireballLayer, false);
+        DeactivatePlayerInvincibleAnimation();
     }
 
     public void DeactivatePlayerInvincibleAnimation()
