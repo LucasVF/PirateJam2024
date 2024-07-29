@@ -39,7 +39,7 @@ public class DamageReceiveBehavior : MonoBehaviour
         if (collision.gameObject.tag == "FireBall")
         {
             FireBallController fireBallController = collision.gameObject.transform.parent.GetComponent<FireBallController>();
-            if (this.isShadow == fireBallController.isShadow)
+            if (fireBallController is null || this.isShadow == fireBallController.isShadow)
             {
                 if (lifeManager.playerLife <= 1)
                 {
