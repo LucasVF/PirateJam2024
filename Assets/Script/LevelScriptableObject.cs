@@ -11,4 +11,7 @@ public class LevelScriptableObject : ScriptableObject
     public List<ObstacleScriptableObject> obstacles;
     public Vector3 playerStartPoint;
     public Vector3 dragonStartPoint;
+    public float dragonAnimationSpeedFactor;
+    public FireBallType dragonFireBallType;
+    public float shadowDragonAnimationSpeedFactor;
 }

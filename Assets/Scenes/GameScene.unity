@@ -3919,7 +3919,8 @@ MonoBehaviour:
   _collectibleSpawner: {fileID: 1346725161}
   _obstacleSpawner: {fileID: 312347351}
   _player: {fileID: 1163996685}
-  _dragon: {fileID: 892574104}
+  _dragonController: {fileID: 810224232}
+  _shadowDragonController: {fileID: 1768795826}
   _collectibleUI: {fileID: 1676199955}
 --- !u!1 &1365695873
 GameObject:

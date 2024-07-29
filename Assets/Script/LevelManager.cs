@@ -14,7 +14,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     Collider _player;
     [SerializeField]
-    GameObject _dragon;
+    DragonController _dragonController;
+    [SerializeField]
+    DragonController _shadowDragonController;
     [SerializeField]
     Text _collectibleUI;
 
@@ -40,8 +42,11 @@ public class LevelManager : MonoBehaviour
             }
         //}
         _player.transform.position = levelConfig.playerStartPoint;
-        _dragon.transform.position = levelConfig.dragonStartPoint;
-        _collectiblesCollected = 0;
+        _dragonController.transform.parent.position = levelConfig.dragonStartPoint;
+        _dragonController.fireBallType = levelConfig.dragonFireBallType;
+        _dragonController.animationSpeedFactor = levelConfig.dragonAnimationSpeedFactor;
+        _shadowDragonController.animationSpeedFactor = levelConfig.shadowDragonAnimationSpeedFactor;
+       _collectiblesCollected = 0;
         UpdateUI();
         _collectibleSpawner.ResetCollectibles();
         foreach (Vector3 point in levelConfig.trueCollectibleSpawnPoint)
