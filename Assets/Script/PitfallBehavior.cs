@@ -27,6 +27,7 @@ public class PitfallBehavior : MonoBehaviour
         if(other.tag == "Player")
         {
             Rigidbody playerRb = GameObject.Find("PlayerTop").GetComponent<Rigidbody>();
+            playerRb.transform.position = this.transform.position;
             playerRb.isKinematic = true;
             _playerShadow.SetActive(false);
             //playerBehaviorScript.enabled = false;
