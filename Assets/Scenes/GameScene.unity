@@ -5726,6 +5726,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerTop
       objectReference: {fileID: 0}
+    - target: {fileID: 9091449930381347285, guid: 2b18f33c096ee99448d384d10f9d0a40, type: 3}
+      propertyPath: m_TagString
+      value: Shadow
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

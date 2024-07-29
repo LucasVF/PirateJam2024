@@ -71,9 +71,8 @@ public class FireBallController : MonoBehaviour
     {
         if (threeLinearTimer > threeLinearTargetTimer)
         {
-            //INFO: Sprite is rotated -90 because of sprite image
-            upperCopy.transform.Translate( Vector2.left * scatterSpeed * Time.deltaTime);
-            downCopy.transform.Translate(Vector2.right * scatterSpeed * Time.deltaTime);
+            upperCopy.transform.Translate( Vector2.up * scatterSpeed * Time.deltaTime);
+            downCopy.transform.Translate(Vector2.down * scatterSpeed * Time.deltaTime);
         }
         threeLinearTimer += Time.deltaTime;
         transform.Translate(new Vector2(-horizontalSpeed * Time.deltaTime, 0));
@@ -83,9 +82,8 @@ public class FireBallController : MonoBehaviour
     {
         if (threeLinearTimer < threeLinearMaxMovTimer)
         {
-            //INFO: Sprite is rotated -90 because of sprite image
-            upperCopy.transform.Translate(Vector2.left * scatterSpeed * Time.deltaTime);
-            downCopy.transform.Translate(Vector2.right * scatterSpeed * Time.deltaTime); ;
+            upperCopy.transform.Translate(Vector2.up * scatterSpeed * Time.deltaTime);
+            downCopy.transform.Translate(Vector2.down * scatterSpeed * Time.deltaTime); ;
         }
         threeLinearTimer += Time.deltaTime;
         transform.Translate(new Vector2(-horizontalSpeed * Time.deltaTime, 0));

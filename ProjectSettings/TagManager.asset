@@ -9,6 +9,7 @@ TagManager:
   - Pitfall
   - GameManager
   - PlayerTop
+  - Shadow
   layers:
   - Default
   - TransparentFX
