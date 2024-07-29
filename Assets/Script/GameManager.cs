@@ -45,6 +45,14 @@ public class GameManager : MonoBehaviour
         _startView.HideView();
     }
 
+    public void GoToMainMenu()
+    {
+        _dictViewTheme[_currentView].HideView();
+        _currentView = ViewType.Start;
+        _dictViewTheme[_currentView].SetUpView();
+        _dictViewTheme[_currentView].DisplayView();
+    }
+
     public void StartGame()
     {
         _dictViewTheme[_currentView].HideView();
