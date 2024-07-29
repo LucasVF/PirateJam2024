@@ -38,15 +38,29 @@ public class AudioEventManager : MonoBehaviour
     }
 
     public void TriggerButtonAudio() => TriggerAudio(ButtonAudio);
-    public void TriggerGameplayThemeAudio() => ChangeTheme(GameplayAudio);
-    public void TriggerCollectibleAudio() => TriggerAudio(CollectibleAudio);
-    public void TriggerTitleThemeAudio() => ChangeTheme(TitleAudio);
+    public void TriggerCollectibleAudio() => TriggerAudio(CollectibleAudio);    
     public void TriggerCharacterFallingAudio() => TriggerAudio(CharacterFallingAudio);
+
+    public void TriggerGameplayThemeAudio()
+    {
+        ThemeAudio.volume = 0.15f;
+        ChangeTheme(GameplayAudio);
+    }
+
+    public void TriggerTitleThemeAudio()
+    {
+        ThemeAudio.volume = 0.4f;
+        ChangeTheme(TitleAudio);
+    }
+
     public void TriggerResultThemeAudio(bool isWinner)
     {
+        
         if (isWinner) {
+            ThemeAudio.volume = 0.15f;
             ChangeTheme(VictoryAudio);
         } else {
+            ThemeAudio.volume = 0.4f;
             ChangeTheme(LossAudio);
         }
     }
