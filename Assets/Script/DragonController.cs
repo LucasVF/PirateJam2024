@@ -11,6 +11,7 @@ public class DragonController : MonoBehaviour
 
     public bool shouldFollowPlayer;
     public Transform fireBallSpawner;
+    public Transform fireBallParent;
     public float fireBallCooldown = 2.0f ;
     public float fireBallTimer;
     public float animationSpeedFactor = 1f;
@@ -40,7 +41,7 @@ public class DragonController : MonoBehaviour
 
     private void spawFireBall()
     {
-        fireBallRef = Instantiate(fireBall);
+        fireBallRef = Instantiate(fireBall, fireBallParent);
         fireBallRef.transform.position = fireBallSpawner.transform.position;
         fireBallRef.GetComponent<FireBallController>().fireBallType = fireBallType;
         fireBallTimer = 0;
