@@ -3164,7 +3164,6 @@ MonoBehaviour:
   _collectibleSpawner: {fileID: 1346725161}
   _obstacleSpawner: {fileID: 312347351}
   _player: {fileID: 1163996685}
-  _shadowPlayer: {fileID: 717653117}
   _dragon: {fileID: 892574104}
   _collectibleUI: {fileID: 1676199955}
 --- !u!1 &1365695873
@@ -5804,6 +5803,10 @@ PrefabInstance:
       propertyPath: playerBottomSprite
       value: 
       objectReference: {fileID: 265826839}
+    - target: {fileID: 4910492633463234544, guid: 633def733acc25c459ba588e55ae231a, type: 3}
+      propertyPath: playerTopTransform
+      value: 
+      objectReference: {fileID: 1163996681}
     - target: {fileID: 4910492633463234544, guid: 633def733acc25c459ba588e55ae231a, type: 3}
       propertyPath: playerBottomAnimator
       value: 

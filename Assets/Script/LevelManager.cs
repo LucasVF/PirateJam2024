@@ -14,8 +14,6 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     Collider _player;
     [SerializeField]
-    Transform _shadowPlayer;
-    [SerializeField]
     GameObject _dragon;
     [SerializeField]
     Text _collectibleUI;
@@ -42,7 +40,6 @@ public class LevelManager : MonoBehaviour
             }
         //}
         _player.transform.position = levelConfig.playerStartPoint;
-        _shadowPlayer.position = new Vector3(_shadowPlayer.position.x, -7.382896f, _shadowPlayer.position.z);
         _dragon.transform.position = levelConfig.dragonStartPoint;
         _collectiblesCollected = 0;
         UpdateUI();

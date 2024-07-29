@@ -21,6 +21,11 @@ public class PlayerBottonBehavior : MonoBehaviour
         playerTopTransform = GameObject.Find("PlayerTop").GetComponent<Transform>();
     }
 
+    private void OnEnable()
+    {
+        transform.position = new Vector3(playerTopTransform.position.x, -7.483972f, 0.0f);
+    }
+
     // Update is called once per frame
     void Update()
     {
