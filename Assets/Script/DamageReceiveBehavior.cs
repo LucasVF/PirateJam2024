@@ -55,6 +55,7 @@ public class DamageReceiveBehavior : MonoBehaviour
                 }
                 else
                 {
+                    AudioEventManager.Instance.TriggerCharacterTakingDamageAudio();
                     lifeManager.TakeDamage(fireBallDamageValue);
                     StartCoroutine(ApplyInvencibility());
                     lifeManager.ShowLife();
@@ -94,8 +95,10 @@ public class DamageReceiveBehavior : MonoBehaviour
     {
         playerTopAnimator.SetTrigger("isDead");
         playerBottomAnimator.SetTrigger("isDead");
-        
         Debug.Log("isDead active");
+
+        yield return new WaitForSeconds(0.1f);
+        AudioEventManager.Instance.TriggerCharacterDyingAudio();
         yield return new WaitForSeconds(1.5f);
         
         lifeManager.DestroyPlayer();

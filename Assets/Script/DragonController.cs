@@ -50,8 +50,8 @@ public class DragonController : MonoBehaviour
         {
             fireballController.setAsShadow();
         }
-        
-        
+
+        AudioEventManager.Instance.TriggerDragonShootingAudio();
         
     }
 

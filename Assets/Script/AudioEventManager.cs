@@ -13,6 +13,14 @@ public class AudioEventManager : MonoBehaviour
     [SerializeField]
     AudioSource CharacterFallingAudio;
     [SerializeField]
+    AudioSource JumpingAudio;
+    [SerializeField]
+    AudioSource TakingDamage;
+    [SerializeField]
+    AudioSource DragonShooting;
+    [SerializeField]
+    AudioSource DyingAudio;
+    [SerializeField]
     AudioSource VictoryCommemorationAudio;
 
     [SerializeField]
@@ -40,7 +48,11 @@ public class AudioEventManager : MonoBehaviour
     public void TriggerButtonAudio() => TriggerAudio(ButtonAudio);
     public void TriggerCollectibleAudio() => TriggerAudio(CollectibleAudio);    
     public void TriggerCharacterFallingAudio() => TriggerAudio(CharacterFallingAudio);
+    public void TriggerCharacterJumpingAudio() => TriggerAudio(JumpingAudio);
+    public void TriggerCharacterTakingDamageAudio() => TriggerAudio(TakingDamage);
+    public void TriggerCharacterDyingAudio() => TriggerAudio(DyingAudio);
     public void TriggerCharacterCommemorationAudio() => TriggerAudio(VictoryCommemorationAudio);
+    public void TriggerDragonShootingAudio() => TriggerAudio(DragonShooting);
     public void TriggerGameplayThemeAudio()
     {
         ThemeAudio.volume = 0.15f;

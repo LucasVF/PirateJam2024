@@ -84,6 +84,7 @@ public class PlayerBottonBehavior : MonoBehaviour
 
     IEnumerator JumpCoroutine()
     {
+        AudioEventManager.Instance.TriggerCharacterJumpingAudio();
         yield return new WaitForSeconds(0.35f);
         playerAnimator.SetBool("jumpLeft", false);
     }
