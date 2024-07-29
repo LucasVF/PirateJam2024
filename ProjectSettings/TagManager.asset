@@ -58,3 +58,6 @@ TagManager:
   - name: Enemy
     uniqueID: 2122577785
     locked: 0
+  - name: ShadowRealm
+    uniqueID: 1667338309
+    locked: 0

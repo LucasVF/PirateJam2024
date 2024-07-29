@@ -93,5 +93,11 @@ public class FireBallController : MonoBehaviour
         //upperCopy.GetComponent<Animator>().SetBool("isShadow", true);
         middleCopy.GetComponent<Animator>().SetBool("isShadow", true);
         //downCopy.GetComponent<Animator>().SetBool("isShadow", true);
+        SpriteRenderer[] spriteRenderers = gameObject.GetComponentsInChildren<SpriteRenderer>();
+        foreach (SpriteRenderer spriteRenderer in spriteRenderers)
+        {
+            spriteRenderer.sortingLayerName = "ShadowRealm";
+            spriteRenderer.color = Color.black;
+        }
     }
 }

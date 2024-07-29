@@ -404,9 +404,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2122577785
-  m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingLayerID: 1667338309
+  m_SortingLayer: 5
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1784708799, guid: 2d3a0cce74861674e9e1e5325e975393, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1613,9 +1613,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1389851729
-  m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingLayerID: 1667338309
+  m_SortingLayer: 5
+  m_SortingOrder: 0
   m_Sprite: {fileID: -2077834695, guid: 462f0ff3a9ed8ec4ba4b56709474ba28, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3479,8 +3479,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2122577785
-  m_SortingLayer: 4
+  m_SortingLayerID: 1667338309
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_Sprite: {fileID: -1407908102, guid: 2d3a0cce74861674e9e1e5325e975393, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5112,7 +5112,7 @@ MonoBehaviour:
   fireBallCooldown: 2
   fireBallTimer: 0
   animationSpeedFactor: 0.5
-  isShadow: 0
+  isShadow: 1
   fireBallType: 0
 --- !u!1 &1837423365
 GameObject:
@@ -5532,9 +5532,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2122577785
-  m_SortingLayer: 4
-  m_SortingOrder: 2
+  m_SortingLayerID: 1667338309
+  m_SortingLayer: 5
+  m_SortingOrder: 1
   m_Sprite: {fileID: 19789296, guid: 2d3a0cce74861674e9e1e5325e975393, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6007,11 +6007,15 @@ PrefabInstance:
       objectReference: {fileID: 265826837}
     - target: {fileID: 8255972535277863725, guid: 633def733acc25c459ba588e55ae231a, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8255972535277863725, guid: 633def733acc25c459ba588e55ae231a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8255972535277863725, guid: 633def733acc25c459ba588e55ae231a, type: 3}
       propertyPath: m_SortingLayerID
-      value: -1403309919
+      value: 1667338309
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

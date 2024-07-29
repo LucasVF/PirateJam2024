@@ -43,11 +43,12 @@ public class DragonController : MonoBehaviour
     {
         fireBallRef = Instantiate(fireBall, fireBallParent);
         fireBallRef.transform.position = fireBallSpawner.transform.position;
-        fireBallRef.GetComponent<FireBallController>().fireBallType = fireBallType;
+        FireBallController fireballController = fireBallRef.GetComponent<FireBallController>();
+        fireballController.fireBallType = fireBallType;
         fireBallTimer = 0;
         if (isShadow)
         {
-            fireBallRef.GetComponent<FireBallController>().setAsShadow();
+            fireballController.setAsShadow();
         }
         
         
