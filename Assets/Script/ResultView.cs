@@ -15,6 +15,10 @@ public class ResultView : View
     [SerializeField]
     GameObject _playNextLevelButton;
     [SerializeField]
+    GameObject _victoryComic;
+    [SerializeField]
+    GameObject _failureComic;
+    [SerializeField]
     LevelSelectorManager _levelSelectorManager;
 
     public LifeManager LifeManager;
@@ -37,6 +41,8 @@ public class ResultView : View
         _resultsText.text = isWinner ? "Yay! You are rich" : "Boohoo... You are poor =(";
         _isWinner = isWinner;
         _playNextLevelButton.SetActive(isWinner && !_levelSelectorManager.IsLastLevel());
+        _victoryComic.SetActive(isWinner);
+        _failureComic.SetActive(!isWinner);
 
         LifeManager.playerLife = 3;
         playerTopGameObject.transform.localScale = playerOriginalScale;
