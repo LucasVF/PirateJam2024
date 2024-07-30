@@ -38,7 +38,7 @@ public class ResultView : View
 
     public void SetWinner(bool isWinner)
     {
-        _resultsText.text = isWinner ? "Yay! You are rich" : "Boohoo... You are poor =(";
+        _resultsText.text = isWinner ? "Yay! Infinite Gold achieved!" : "Boohoo... No gold for you =(";
         _isWinner = isWinner;
         _playNextLevelButton.SetActive(isWinner && !_levelSelectorManager.IsLastLevel());
         _victoryComic.SetActive(isWinner);
