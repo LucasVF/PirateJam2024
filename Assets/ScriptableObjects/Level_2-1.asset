@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f30114c4096d23b49b0ab6781e4dfa3e, type: 3}
   m_Name: Level_2-1
   m_EditorClassIdentifier: 
-  levelID: 1
+  levelID: 8
   trueCollectibleSpawnPoint:
   - {x: -15.5, y: -1, z: 0.83}
   - {x: 0, y: 9, z: 0.83}
@@ -31,5 +31,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0b1119e28733a5041a80ea4b3573da31, type: 2}
   playerStartPoint: {x: -7.03, y: 1, z: 0}
   dragonStartPoint: {x: 14.68, y: 2.44, z: 1.3605776}
-  dragonAnimationSpeedFactor: 5
+  dragonAnimationSpeedFactor: 1.15
   dragonFireBallType: 3

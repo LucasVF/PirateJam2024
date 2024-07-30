@@ -2051,9 +2051,15 @@ MonoBehaviour:
   _gameManager: {fileID: 224177334}
   _levelSelectorUnitPrefab: {fileID: 7699940557570457969, guid: f345e5c22530dfc4e878a2f1c0bb531e, type: 3}
   _levelConfigs:
+  - {fileID: 11400000, guid: 2935766b7bbda404189471ec545557dd, type: 2}
+  - {fileID: 11400000, guid: 9c743da682507824597afae303269eee, type: 2}
+  - {fileID: 11400000, guid: 332b6d212056a2942bbeae6b4048b5cb, type: 2}
   - {fileID: 11400000, guid: 479a606f7ca2a22498b2ef0778de2351, type: 2}
   - {fileID: 11400000, guid: 847102b89adf5b34a9fe76cb1262152c, type: 2}
   - {fileID: 11400000, guid: b946ed0c1620cb54fb2379044a99c67d, type: 2}
+  - {fileID: 11400000, guid: 12e09467a7abc0b49bda3fd3b6e12ffe, type: 2}
+  - {fileID: 11400000, guid: cf6394824d1d5c541b5d5772dddfaf99, type: 2}
+  - {fileID: 11400000, guid: 8e968ee30f40f4f458295d06efb1433c, type: 2}
   spacing: 400
   transitionDuration: 0.5
   _moveRight: {fileID: 1670831400}
@@ -4060,9 +4066,7 @@ MonoBehaviour:
   shouldFollowPlayer: 1
   fireBallSpawner: {fileID: 126189180}
   fireBallParent: {fileID: 892574105}
-  fireBallCooldown: 2
   fireBallTimer: 0
-  animationSpeedFactor: 0.5
   isShadow: 0
   fireBallType: 3
 --- !u!95 &810224233
@@ -8912,9 +8916,7 @@ MonoBehaviour:
   shouldFollowPlayer: 0
   fireBallSpawner: {fileID: 583430156}
   fireBallParent: {fileID: 892574105}
-  fireBallCooldown: 2
   fireBallTimer: 0
-  animationSpeedFactor: 0.5
   isShadow: 1
   fireBallType: 0
 --- !u!1 &1788364649
