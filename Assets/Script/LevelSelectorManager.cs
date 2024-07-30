@@ -85,6 +85,11 @@ public class LevelSelectorManager : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        UpdateCarousel();
+    }
+
     public void MoveLeft()
     {
         if (currentIndex > 0 && !isTransitioning)
