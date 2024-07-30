@@ -52,6 +52,7 @@ public class LevelManager : MonoBehaviour
             }
         //}
         _player.transform.position = levelConfig.playerStartPoint;
+        _player.GetComponent<Rigidbody>().isKinematic = false;
         _dragonController.transform.parent.position = levelConfig.dragonStartPoint;
         _dragonController.fireBallType = levelConfig.dragonFireBallType;
         _dragonController.animationSpeedFactor = levelConfig.dragonAnimationSpeedFactor;
